@@ -142,9 +142,105 @@ body.night-style .menu-box {
 }
 
 .menu-box {
-    padding: 20px;
+    padding: 15px;
     margin-bottom: 15px;
     border-radius: 6px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.menu-box img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.menu-box .image-placeholder {
+    width: 80px;
+    height: 80px;
+    background-color: #e0dede;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #777;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+}
+
+.menu-box .menu-info {
+    flex-grow: 1;
+}
+
+.menu-box .menu-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.menu-box .menu-desc {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+body.night-style .menu-box .menu-desc {
+    color: #aaa;
+}
+
+/* --- メニュータブ切り替え --- */
+.menu-category-tabs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.menu-category-tabs button {
+    padding: 10px 20px;
+    border: 2px solid #c5a059;
+    background-color: transparent;
+    color: #c5a059;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.menu-category-tabs button.active {
+    background-color: #c5a059;
+    color: #fff;
+}
+
+.menu-category-tabs button:hover {
+    opacity: 0.8;
+}
+
+/* メニューセクション */
+.menu-section {
+    display: none;
+}
+
+.menu-section.active {
+    display: block;
+}
+
+.menu-section h3 {
+    color: #c5a059;
+    border-left: 4px solid #c5a059;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.menu-section h3:first-child {
+    margin-top: 0;
 }
 
 /* --- フッター（全ページ共通） --- */

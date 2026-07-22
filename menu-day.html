@@ -32,72 +32,70 @@
 
     <!-- メインコンテンツ -->
     <main class="content">
-        <h2>Cafe Time Menu (9:00 - 17:59（morning ～11:30）)</h2>
-        <p>明るい陽光の中で楽しむ、こだわりのコーヒーと軽食</p>
-        
-        <div class="content" style="max-width: 900px; margin: 40px auto; padding: 0 20px;">
-    <h2 style="text-align: center; margin-bottom: 30px; border-bottom: 2px solid #c5a059; padding-bottom: 10px;">DAY MENU - ドリンク -</h2>
+        <h2 style="text-align: center; margin-bottom: 30px; border-bottom: 2px solid #c5a059; padding-bottom: 10px;">DAY MENU</h2>
+        <p style="text-align: center; margin-bottom: 30px;">明るい陽光の中で楽しむ、こだわりのコーヒーと軽食</p>
 
-    <!-- コーヒー系 -->
-    <section style="margin-bottom: 40px;">
-        <h3 style="color: #c5a059; border-left: 4px solid #c5a059; padding-left: 10px; margin-bottom: 20px;">コーヒー系</h3>
-        
-        <!-- ▼ 各メニュー項目（画像スペース付き） ▼ -->
-        <div class="menu-box" style="margin-bottom: 15px; padding: 15px; border-radius: 6px; display: flex; gap: 20px; align-items: center;">
-            <img src="image/drinkImages/coffee/アメリカンコーヒー.jpg" alt="ドリンク名" style="width: 80px; height: 80px; object-fit: cover; border-radius: 4px; flex-shrink: 0;">
-            <div style="width: 80px; height: 80px; background-color: #e0dede; border-radius: 4px; display: flex; justify-content: center; align-items: center; color: #777; font-size: 0.8rem; flex-shrink: 0;">IMAGE</div>
-            <div style="flex-grow: 1;">
-                <div style="display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 5px;">
-                    <span>アメリカン</span><span>500円</span>
-                </div>
-                <p style="margin: 0; font-size: 0.95rem; color: #666;">すっきりと軽い口当たりで、苦味が少なくブラックでも飲みやすい一杯です。</p>
-            </div>
+        <!-- メニューカテゴリ切り替えタブ -->
+        <div class="menu-category-tabs">
+            <button class="tab-btn active" data-category="drinks">🍵 ドリンク</button>
+            <button class="tab-btn" data-category="foods">🍽️ フード</button>
         </div>
 
-        <div class="menu-box" style="margin-bottom: 15px; padding: 15px; border-radius: 6px; display: flex; gap: 20px; align-items: center;">
-            <div style="width: 80px; height: 80px; background-color: #e0dede; border-radius: 4px; display: flex; justify-content: center; align-items: center; color: #777; font-size: 0.8rem; flex-shrink: 0;">IMAGE</div>
-            <div style="flex-grow: 1;">
-                <div style="display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 5px;">
-                    <span>エスプレッソ</span><span>450円</span>
-                </div>
-                <p style="margin: 0; font-size: 0.95rem; color: #666;">豆の旨味と深いコクをギュッと凝縮した、濃厚でビターな本格派です。</p>
-            </div>
+        <!-- ドリンクメニュー -->
+        <div class="menu-section active" data-category="drinks">
+            <section>
+                <h3>コーヒー系</h3>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>アメリカン</span><span>500円</span></div><p class="menu-desc">すっきりと軽い口当たりで、苦味が少なくブラックでも飲みやすい一杯です。</p></div></div>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>エスプレッソ</span><span>450円</span></div><p class="menu-desc">豆の旨味と深いコクをギュッと凝縮した、濃厚でビターな本格派です。</p></div></div>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>カフェラテ</span><span>600円</span></div><p class="menu-desc">エスプレッソの豊かな香りと、たっぷりのミルクが織りなすまろやかな味わいです。</p></div></div>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>カプチーノ</span><span>600円</span></div><p class="menu-desc">きめ細やかなふわふわのミルクフォームと、コーヒーの苦味が絶妙に調和します。</p></div></div>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>カフェオレ</span><span>580円</span></div><p class="menu-desc">ドリップコーヒーをベースにミルクを合わせた、どこかホッとする優しい味わいです。</p></div></div>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>アメリカーノ</span><span>500円</span></div><p class="menu-desc">エスプレッソをお湯で割ることで、芳醇な香りを残しつつすっきりとした後味に仕上げました。</p></div></div>
+            </section>
+
+            <section>
+                <h3>紅茶</h3>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>ミルクティー</span><span>550円</span></div><p class="menu-desc">コクのある茶葉にミルクを加え、まろやかで深みのある味わいに仕立てました。</p></div></div>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>ストレート(アールグレイ)</span><span>550円</span></div><p class="menu-desc">ベルガモットの気品ある香りがふんわりと広がる、爽やかなストレートティーです。</p></div></div>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>レモンティー</span><span>550円</span></div><p class="menu-desc">フレッシュレモンの爽やかな酸味が、紅茶の香りを引き立てる定番の一杯です。</p></div></div>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>ウーロン茶</span><span>450円</span></div><p class="menu-desc">すっきりとしたキレのある喉越しで、どんなお食事にもよく合います。</p></div></div>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>緑茶</span><span>450円</span></div><p class="menu-desc">国産茶葉の豊かな香りと、お茶本来の程よい渋みが心地よい一杯です。</p></div></div>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>チャイ</span><span>650円</span></div><p class="menu-desc">数種類のスパイスが複雑に香る、心も身体も温まる濃厚なミルクティーです。</p></div></div>
+            </section>
+
+            <section>
+                <h3>ソフトドリンク</h3>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>メロンソーダ</span><span>480円</span></div><p class="menu-desc">鮮やかな緑色とシュワっと弾む炭酸が懐かしい、甘く爽やかなソーダです。</p></div></div>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>コーラ</span><span>480円</span></div><p class="menu-desc">ピリッとした刺激と爽快な甘みが広がる、お馴染みの炭酸飲料です。</p></div></div>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>ジンジャーエール</span><span>480円</span></div><p class="menu-desc">生姜のピリッとした辛みが効いた、大人な味わいのキリッとした炭酸です。</p></div></div>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>りんごジュース</span><span>480円</span></div><p class="menu-desc">りんご本来の自然な甘みと、フルーティーで優しい香りが楽しめます。</p></div></div>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>オレンジジュース</span><span>480円</span></div><p class="menu-desc">ジューシーなオレンジの爽やかな酸味とすっきりした甘みが広がります。</p></div></div>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>カルピス</span><span>480円</span></div><p class="menu-desc">甘酸っぱくてまろやかな味わいが、子供から大人まで愛される定番のドリンクです。</p></div></div>
+            </section>
         </div>
 
-        <div class="menu-box" style="margin-bottom: 15px; padding: 15px; border-radius: 6px; display: flex; gap: 20px; align-items: center;">
-            <div style="width: 80px; height: 80px; background-color: #e0dede; border-radius: 4px; display: flex; justify-content: center; align-items: center; color: #777; font-size: 0.8rem; flex-shrink: 0;">IMAGE</div>
-            <div style="flex-grow: 1;">
-                <div style="display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 5px;">
-                    <span>カフェラテ</span><span>600円</span>
-                </div>
-                <p style="margin: 0; font-size: 0.95rem; color: #666;">エスプレッソの豊かな香りと、たっぷりのミルクが織りなすまろやかな味わいです。</p>
-            </div>
-        </div>
+        <!-- フードメニュー -->
+        <div class="menu-section" data-category="foods">
+            <section>
+                <h3>サンドウィッチ</h3>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>ハムチーズサンド</span><span>720円</span></div><p class="menu-desc">香ばしく焼いたパンに、ハムとチーズのハーモニーをシンプルに詰めました。</p></div></div>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>ツナマヨサンド</span><span>700円</span></div><p class="menu-desc">新鮮なツナとマヨネーズの爽やかな組み合わせが絶品です。</p></div></div>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>エッグサンド</span><span>680円</span></div><p class="menu-desc">ふんわりとしたスクランブルエッグをたっぷり詰めた、朝食の定番です。</p></div></div>
+            </section>
 
-        <div class="menu-box" style="margin-bottom: 15px; padding: 15px; border-radius: 6px; display: flex; gap: 20px; align-items: center;">
-            <div style="width: 80px; height: 80px; background-color: #e0dede; border-radius: 4px; display: flex; justify-content: center; align-items: center; color: #777; font-size: 0.8rem; flex-shrink: 0;">IMAGE</div>
-            <div style="flex-grow: 1;">
-                <div style="display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 5px;">
-                    <span>カプチーノ</span><span>600円</span>
-                </div>
-                <p style="margin: 0; font-size: 0.95rem; color: #666;">きめ細やかなふわふわのミルクフォームと、コーヒーの苦味が絶妙に調和します。</p>
-            </div>
-        </div>
+            <section>
+                <h3>ペストリー</h3>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>バターロール</span><span>450円</span></div><p class="menu-desc">塩分が心地よい、バターの香りが引き立つクラシックなロールです。</p></div></div>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>クロワッサン</span><span>500円</span></div><p class="menu-desc">サクサクとした層状の食感と、バターの豊かな香りが特徴です。</p></div></div>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>チョコクロワッサン</span><span>550円</span></div><p class="menu-desc">濃厚なチョコレートの甘みと、クロワッサンのサクサク食感が相性抜群です。</p></div></div>
+            </section>
 
-        <div class="menu-box" style="margin-bottom: 15px; padding: 15px; border-radius: 6px; display: flex; gap: 20px; align-items: center;">
-            <div style="width: 80px; height: 80px; background-color: #e0dede; border-radius: 4px; display: flex; justify-content: center; align-items: center; color: #777; font-size: 0.8rem; flex-shrink: 0;">IMAGE</div>
-            <div style="flex-grow: 1;">
-                <div style="display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 5px;">
-                    <span>カフェオレ</span><span>580円</span>
-                </div>
-                <p style="margin: 0; font-size: 0.95rem; color: #666;">ドリップコーヒーをベースにミルクを合わせた、どこかホッとする優しい味わいです。</p>
-            </div>
-        </div>
-
-        <div class="menu-box" style="margin-bottom: 15px; padding: 15px; border-radius: 6px; display: flex; gap: 20px; align-items: center;">
-            <div style="width: 80px; height: 80px; background-color: #e0dede; border-radius: 4px; display: flex; justify-content: center; align-items: center; color: #777; font-size: 0.8rem; flex-shrink: 0;">IMAGE</div>
-            <div style="flex-grow: 1;">
-                <div style="display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 5px;">
+            <section>
+                <h3>スイーツ</h3>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>チーズケーキ</span><span>650円</span></div><p class="menu-desc">濃厚でなめらかなチーズの風味が、優雅な甘さで仕上がっています。</p></div></div>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>ガトーショコラ</span><span>700円</span></div><p class="menu-desc">深い味わいのダークチョコレートを使った、濃厚で艶やかなケーキです。</p></div></div>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>アップルパイ</span><span>680円</span></div><p class="menu-desc">シナモンの香りが心地よい、季節の王道スイーツです。</p></div></div>
+            </section>
                     <span>アメリカーノ</span><span>500円</span>
                 </div>
                 <p style="margin: 0; font-size: 0.95rem; color: #666;">エスプレッソをお湯で割ることで、芳醇な香りを残しつつすっきりとした後味に仕上げました。</p>
@@ -234,11 +232,30 @@
             </div>
         </div>
     </section>
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2026 CAFE & BAR Twilight All Rights Reserved.</p>
     </footer>
+
+    <script>
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const category = this.dataset.category;
+                
+                // タブのアクティブ状態を更新
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                // メニューセクションの表示/非表示を切り替え
+                document.querySelectorAll('.menu-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                document.querySelector(`.menu-section[data-category="${category}"]`).classList.add('active');
+            });
+        });
+    </script>
 
 </body>
 </html>
