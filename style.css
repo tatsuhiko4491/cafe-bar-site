@@ -156,3 +156,48 @@ footer {
     margin-top: 50px;
     font-size: 0.9rem;
 }
+
+/* ==========================================
+   スマホ・タブレット向けの表示設定（レスポンシブ）
+   ========================================== */
+@media screen and (max-width: 768px) {
+    
+    /* 1. 全体の余白や文字サイズをスマホ用に調整 */
+    body {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+
+    /* 2. ヘッダーのメニューを縦並びまたはコンパクトにする */
+    header {
+        flex-direction: column;
+        padding: 10px;
+        text-align: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0;
+        margin-top: 10px;
+    }
+
+    /* 3. メニューの画像とテキストをスマホでは縦に並べる（必要に応じて） */
+    .menu-box {
+        flex-direction: column !important;
+        text-align: center;
+    }
+
+    .menu-box img, 
+    .menu-box div[style*="background-color"] {
+        margin: 0 auto 10px auto !important; /* 画像を中央に配置 */
+    }
+
+    /* 4. メインコンテンツの横幅を画面いっぱいに広げる */
+    main.content, 
+    div.content {
+        width: 100% !important;
+        padding: 0 10px !important;
+        margin: 20px auto !important;
+    }
+}
