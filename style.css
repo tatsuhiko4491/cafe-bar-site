@@ -383,4 +383,13 @@ footer {
         padding: 0 10px !important;
         margin: 20px auto !important;
     }
+
+    /* スマホでヘッダー画像をスマホ用画像に切替 */
+    .hero-image-area {
+        background-image: url('image/smartHeader.png');
+        background-size: contain;
+        background-position: center top;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+    }
 }
