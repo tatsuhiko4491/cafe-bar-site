@@ -14,11 +14,11 @@
         <a href="index.html">CAFE & BAR Twilight</a>
     </div>
     <input type="checkbox" id="menu-toggle-checkbox" class="menu-checkbox" aria-controls="main-navigation" aria-expanded="false">
-    <label for="menu-toggle-checkbox" class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">
+    <button type="button" class="menu-toggle" aria-controls="main-navigation" aria-label="メニューを開く" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
-    </label>
+    </button>
     <nav id="main-navigation" aria-label="Main navigation">
         <ul>
             <li><a href="index.html">HOME</a></li>
@@ -66,6 +66,10 @@
                 function enableFocusTrap(){ prevFocus = document.activeElement; focusable = Array.from(mainNav.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])')).filter(el=>!el.disabled); if(focusable.length) focusable[0].focus(); trapHandler = function(e){ if(e.key!=='Tab') return; const first=focusable[0], last=focusable[focusable.length-1]; if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); } else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }}; document.addEventListener('keydown', trapHandler); }
                 function disableFocusTrap(){ if(trapHandler) document.removeEventListener('keydown', trapHandler); trapHandler=null; if(prevFocus) prevFocus.focus(); }
                 menuCheckbox.addEventListener('change', updateMenuAria);
+                menuToggleLabel.addEventListener('click', () => {
+                    menuCheckbox.checked = !menuCheckbox.checked;
+                    menuCheckbox.dispatchEvent(new Event('change'));
+                });
                 document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ menuCheckbox.checked=false; updateMenuAria(); }});
                 document.addEventListener('click', (e)=>{ if(menuCheckbox.checked && !mainNav.contains(e.target) && !menuToggleLabel.contains(e.target)){ menuCheckbox.checked=false; updateMenuAria(); }});
             })();
