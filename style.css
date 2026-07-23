@@ -311,12 +311,23 @@ body.night-style .menu-box .menu-desc {
     width: auto;
     padding: 8px 16px;
     border: 2px solid var(--primary);
+    border-radius: 999px;
     background-color: transparent;
     color: var(--primary);
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
-.menu-category-tabs button:hover {
-    opacity: 0.8;
+.menu-category-tabs button:hover,
+.menu-category-tabs button:focus-visible {
+    opacity: 0.95;
+    transform: translateY(-1px);
+}
+
+.menu-category-tabs button.active,
+.menu-category-tabs button[aria-selected="true"] {
+    background-color: var(--primary);
+    color: var(--text-inverse);
+    box-shadow: 0 0 0 4px rgba(197,160,89,0.16);
 }
 
 /* メニューセクション */
