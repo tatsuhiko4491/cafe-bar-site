@@ -356,13 +356,18 @@ body.night-style .menu-box .menu-desc {
 
 /* --- 期間限定メニュー表示 --- */
 .limited-announcement {
-    background: rgba(255, 255, 255, 0.95);
-    border: 1px solid rgba(197, 160, 89, 0.18);
-    color: #222;
+    background: rgba(255, 255, 255, 0.97);
+    border: 1px solid rgba(197, 160, 89, 0.22);
+    color: #1f1f1f;
     padding: 20px 22px;
     border-radius: var(--radius);
     margin-bottom: 24px;
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+}
+
+.limited-announcement h3,
+.limited-announcement p {
+    color: inherit;
 }
 
 body.day-style .limited-announcement {
@@ -371,9 +376,9 @@ body.day-style .limited-announcement {
 }
 
 body.night-style .limited-announcement {
-    background: rgba(255,255,255,0.1);
-    border-color: rgba(255,255,255,0.22);
-    color: #f5f3ef;
+    background: rgba(255,255,255,0.14);
+    border-color: rgba(255,255,255,0.24);
+    color: #fdf7eb;
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
 }
 
@@ -384,6 +389,7 @@ body.night-style .limited-announcement a {
 .limited-announcement a {
     color: var(--primary);
     text-decoration: underline;
+    font-weight: 600;
 }
 
 .limited-menu-grid {
@@ -394,11 +400,19 @@ body.night-style .limited-announcement a {
 }
 
 .limited-menu-card {
-    background: rgba(255,255,255,0.95);
+    background: rgba(255,255,255,0.97);
     border: 1px solid rgba(0,0,0,0.08);
     border-radius: var(--radius);
     padding: 18px;
     box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+    color: #1f1f1f;
+}
+
+body.night-style .limited-menu-card {
+    background: rgba(255,255,255,0.14);
+    border-color: rgba(255,255,255,0.22);
+    color: #fdf7eb;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.25);
 }
 
 .limited-menu-card h4 {
@@ -416,6 +430,7 @@ body.night-style .limited-announcement a {
 .limited-menu-card li {
     margin-bottom: 12px;
     line-height: 1.45;
+    color: inherit;
 }
 
 .limited-menu-card li:last-child {
