@@ -19,7 +19,7 @@
         <span></span>
         <span></span>
     </label>
-    <nav id="main-navigation">
+    <nav id="main-navigation" aria-label="Main navigation">
         <ul>
             <li><a href="index.html">HOME</a></li>
             <li><a href="concept.html">CONCEPT</a></li>
@@ -60,10 +60,36 @@
             </ul>
         </div>
 
-        <!-- 期間限定メニューの案内など -->
+        <!-- 期間限定メニューの案内: カクテル・フード・スイーツを横並びで紹介 -->
         <div class="event-section">
-            <h3>✨ 今月の期間限定カクテル</h3>
-            <p><strong>「初夏のブルース」 ￥950</strong><br>ライブの雰囲気に合わせた、夜限定のオリジナルのブルーカクテルです。</p>
+            <h3>✨ 期間限定メニュー</h3>
+            <p>今だけの特別メニューを3種類ご用意しました。カクテル・フード・スイーツを一度にお楽しみください。</p>
+            <div class="limited-menu-grid">
+                <div class="limited-menu-card">
+                    <h4>カクテル</h4>
+                    <ul>
+                        <li><strong>初夏のブルース</strong> ￥950<br>柑橘とブルーキュラソーがおりなす、爽やかな夜の一杯。</li>
+                        <li><strong>サンセットモヒート</strong> ￥980<br>ミントとグレープフルーツが香る、軽やかな夏のモヒート。</li>
+                        <li><strong>ラムココパッション</strong> ￥1,050<br>ココナッツとパッションフルーツが溶け合うトロピカルな一杯。</li>
+                    </ul>
+                </div>
+                <div class="limited-menu-card">
+                    <h4>フード</h4>
+                    <ul>
+                        <li><strong>ハーブチキンプレート</strong> ￥1,200<br>ローズマリー香るチキンに、季節野菜のグリルを添えて。</li>
+                        <li><strong>季節野菜のグリル</strong> ￥980<br>旬の野菜をじっくり焼き上げた、優しい味わいの一皿。</li>
+                        <li><strong>ブルーチーズと梨のトースト</strong> ￥900<br>甘じょっぱいコンビネーションが夜の会話を盛り上げます。</li>
+                    </ul>
+                </div>
+                <div class="limited-menu-card">
+                    <h4>スイーツ</h4>
+                    <ul>
+                        <li><strong>ベリーのグランデセール</strong> ￥780<br>赤い果実とホイップクリームの華やかな甘さ。</li>
+                        <li><strong>抹茶ティラミス</strong> ￥820<br>ほろ苦い抹茶が香る、和洋折衷のデザート。</li>
+                        <li><strong>シナモンアップルクレームブリュレ</strong> ￥830<br>キャラメリゼしたリンゴと香ばしいシナモンの風味。</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -71,6 +97,8 @@
     <footer>
         <p>&copy; 2026 CAFE & BAR Twilight All Rights Reserved.</p>
     </footer>
+
+    <!-- JavaScript: ハンバーガーメニューの aria-expanded 更新とフォーカストラップ -->
     <script>
         (function(){
             const menuCheckbox = document.getElementById('menu-toggle-checkbox');

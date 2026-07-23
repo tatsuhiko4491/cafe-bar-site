@@ -40,6 +40,11 @@
     <main class="content">
         <h2 class="page-title">DAY MENU</h2>
         <p class="page-subtitle">明るい陽光の中で楽しむ、こだわりのコーヒーと軽食</p>
+        <!-- 期間限定コーナー -->
+        <div class="limited-announcement">
+            <h3>期間限定コーナー</h3>
+            <p>期間限定メニューは <a href="event.html">EVENTS & SPACE</a> でご紹介中です。今だけのカクテル・フード・スイーツをチェックしてください。</p>
+        </div>
 
         <!-- メニューカテゴリ切り替えタブ -->
         <div class="menu-category-tabs" role="tablist" aria-label="Menu categories">
@@ -104,6 +109,20 @@
                 <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>アップルパイ</span><span>680円</span></div><p class="menu-desc">シナモンの香りが心地よい、季節の王道スイーツです。</p></div></div>
             </section>
         </div>
+
+        <!-- セットメニュー -->
+        <div class="menu-section" data-category="sets">
+            <section>
+                <h3>ブランチセット</h3>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>トースト＆コーヒーセット</span><span>980円</span></div><p class="menu-desc">自家製ブレッドと本日のコーヒー、フレッシュサラダがついた朝にぴったりのセットです。</p></div></div>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>ベーグルサンド＆紅茶セット</span><span>1,080円</span></div><p class="menu-desc">ツナとクリームチーズのベーグルサンドに、香り高いストレートティーを合わせました。</p></div></div>
+            </section>
+            <section>
+                <h3>ライトセット</h3>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>フルーツヨーグルトセット</span><span>900円</span></div><p class="menu-desc">旬のフルーツとヨーグルト、ミニスイーツを添えた女性にも人気のヘルシーセットです。</p></div></div>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>サンドイッチ＆ミニスープセット</span><span>980円</span></div><p class="menu-desc">お腹にちょうど良いサイズのサンドイッチと、あたたかいミニスープがついた定番セットです。</p></div></div>
+            </section>
+        </div>
     </main>
 
     <footer>
@@ -111,7 +130,7 @@
     </footer>
 
     <script>
-        // タブ切替（クリック＋キーボード対応）、aria属性の管理
+        // JavaScript: メニュー画面のタブ切替（クリックと左右矢印のキーボード対応）
         const tabs = Array.from(document.querySelectorAll('.menu-category-tabs .tab-btn'));
         const sections = Array.from(document.querySelectorAll('.menu-section'));
 

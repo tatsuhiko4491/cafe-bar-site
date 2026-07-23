@@ -40,6 +40,11 @@
     <main class="content">
         <h2 class="page-title">NIGHT MENU</h2>
         <p class="page-subtitle">音楽と灯りに包まれて、大人の時間を愉しむお酒の数々</p>
+        <!-- 期間限定コーナー -->
+        <div class="limited-announcement">
+            <h3>期間限定コーナー</h3>
+            <p>期間限定メニューは <a href="event.html">EVENTS & SPACE</a> でご案内中です。限定カクテル・フード・スイーツをぜひお試しください。</p>
+        </div>
 
         <!-- メニューカテゴリ切り替えタブ -->
         <div class="menu-category-tabs" role="tablist" aria-label="Menu categories">
@@ -139,6 +144,20 @@
                 <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>サーモンステーク</span><span>1400円</span></div><p class="menu-desc">バターで焼いた旬のサーモン。上質な味わいが堪能できます。</p></div></div>
             </section>
         </div>
+
+        <!-- セットメニュー -->
+        <div class="menu-section" data-category="sets">
+            <section>
+                <h3>バーリラックスセット</h3>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>ハイボール＆ナッツセット</span><span>980円</span></div><p class="menu-desc">定番のハイボールと香ばしいナッツ盛り合わせで、気軽に始められるおつまみセット。</p></div></div>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>ワイン＆チーズセット</span><span>1,280円</span></div><p class="menu-desc">赤・白どちらかのグラスワインと、数種のチーズを楽しめるペアリングセットです。</p></div></div>
+            </section>
+            <section>
+                <h3>カップルセット</h3>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>カクテル2杯＆前菜盛りセット</span><span>2,200円</span></div><p class="menu-desc">カクテル2杯と前菜の盛り合わせで、二人の夜を華やかに彩るセットです。</p></div></div>
+                <div class="menu-box"><div class="image-placeholder">IMAGE</div><div class="menu-info"><div class="menu-header"><span>スタンダードフードセット</span><span>1,580円</span></div><p class="menu-desc">唐揚げ・枝豆・ピクルスの3品とお好きなドリンク1杯がついたお得なセット。</p></div></div>
+            </section>
+        </div>
     </main>
 
     <footer>
@@ -146,7 +165,7 @@
     </footer>
 
     <script>
-        // タブ切替（クリック＋キーボード対応）、aria属性の管理
+        // JavaScript: メニュー画面のタブ切替（クリックと左右矢印のキーボード対応）
         const tabsN = Array.from(document.querySelectorAll('.menu-category-tabs .tab-btn'));
         const sectionsN = Array.from(document.querySelectorAll('.menu-section'));
 

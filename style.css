@@ -1,3 +1,19 @@
+:root {
+    --bg: #fcfbfa;
+    --text: #333333;
+    --surface: #ffffff;
+    --surface-muted: #18171C;
+    --surface-alt: #2a2a2a;
+    --primary: #c5a059;
+    --header-bg: #18171C;
+    --footer-bg: #18171C;
+    --text-inverse: #ffffff;
+    --text-muted: #aaa;
+    --border: rgba(197,160,89,0.25);
+    --radius: 6px;
+    --spacing: 20px;
+}
+
 /* --- 共通の基本設定 --- */
 *, *::before, *::after {
     box-sizing: border-box;
@@ -11,14 +27,21 @@ body {
     margin: 0;
     font-family: sans-serif;
     line-height: 1.6;
-    background-color: #fcfbfa; /* デフォルトの背景色 */
-    color: #333333;
+    background-color: var(--bg);
+    color: var(--text);
 }
 
 img {
     max-width: 100%;
     height: auto;
     display: block;
+}
+
+a:focus-visible,
+button:focus-visible,
+.menu-toggle:focus-visible {
+    outline: 3px solid rgba(197,160,89,0.9);
+    outline-offset: 2px;
 }
 
 /* --- ヘッダーロゴのリンクスタイル（インラインstyleから移動） --- */
@@ -282,23 +305,14 @@ body.night-style .menu-box .menu-desc {
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    flex: 1 1 140px;
     min-width: 140px;
     max-width: 220px;
-    width: 100%;
+    width: auto;
     padding: 8px 16px;
-    border: 2px solid #c5a059;
+    border: 2px solid var(--primary);
     background-color: transparent;
-    color: #c5a059;
-    font-weight: bold;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-}
-
-.menu-category-tabs button.active {
-    background-color: #c5a059;
-    color: #fff;
+    color: var(--primary);
 }
 
 .menu-category-tabs button:hover {
@@ -324,6 +338,63 @@ body.night-style .menu-box .menu-desc {
 
 .menu-section h3:first-child {
     margin-top: 0;
+}
+
+/* --- 期間限定メニュー表示 --- */
+.limited-announcement {
+    background: rgba(197,160,89,0.08);
+    border: 1px solid rgba(197,160,89,0.25);
+    color: #222;
+    padding: 16px 18px;
+    border-radius: var(--radius);
+    margin-bottom: 24px;
+}
+
+.limited-announcement a {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.limited-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.limited-menu-card {
+    background: rgba(255,255,255,0.95);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: var(--radius);
+    padding: 18px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+}
+
+.limited-menu-card h4 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: var(--primary);
+}
+
+.limited-menu-card ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.limited-menu-card li {
+    margin-bottom: 12px;
+    line-height: 1.45;
+}
+
+.limited-menu-card li:last-child {
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 960px) {
+    .limited-menu-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* --- フッター（全ページ共通） --- */
@@ -364,78 +435,26 @@ footer {
         position: absolute;
         top: 8px;
         right: 12px;
-        width: 40px;
-        height: 36px;
+        width: 48px;
+        height: 40px;
         padding: 6px;
         z-index: 60;
-    }
-
-    /* 強制表示：何らかの競合で非表示になっている場合に備える */
-    .menu-toggle {
-        display: inline-flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-
-    /* トグルのラベルを確実にタップできるように表示領域を広げる */
-    .menu-toggle {
-        display: inline-flex !important;
-        width: 48px !important;
-        height: 40px !important;
-        padding: 6px !important;
-        align-items: center !important;
-        justify-content: center !important;
-        overflow: visible !important;
-    }
-
-    /* ハンバーガーの3本線を縦に並べて中央揃えにする */
-    .menu-toggle {
-        flex-direction: column;
-        padding: 6px 8px;
+        background: rgba(255,255,255,0.04);
+        border-radius: 4px;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.3);
     }
 
     .menu-toggle span {
-        width: 18px;
+        width: 20px;
         height: 2px;
         background-color: #fff;
         border-radius: 2px;
         display: block;
         margin: 3px 0;
         transition: transform 0.2s ease, opacity 0.2s ease;
+        position: static;
     }
 
-    /* 念のため span の表示を強制 */
-    .menu-toggle span {
-        display: block !important;
-        background-color: #fff !important;
-        width: 18px !important;
-        height: 2px !important;
-    }
-
-    /* トグルと線を最前面に出す（背景に隠れないように） */
-    .menu-toggle {
-        z-index: 9999 !important;
-    }
-
-    .menu-toggle span {
-        position: relative !important;
-        z-index: 10000 !important;
-    }
-
-    /* 中央ラインを確実に表示するため span を中央に位置させる */
-    .menu-toggle span {
-        position: absolute !important;
-        left: 14px !important;
-        top: 18px !important;
-        width: 20px !important;
-        height: 2px !important;
-        background-color: #fff !important;
-        margin: 0 !important;
-        display: block !important;
-        border-radius: 2px !important;
-    }
-
-    /* フォールバック：擬似要素で確実に3本線を描画する（spanが非表示のときも表示される） */
     .menu-toggle::before,
     .menu-toggle::after {
         content: "";
@@ -445,35 +464,15 @@ footer {
         height: 2px;
         background: #fff;
         border-radius: 2px;
-        z-index: 9999;
+        z-index: 1;
     }
 
     .menu-toggle::before {
-        top: 12px;
+        top: 10px;
     }
 
     .menu-toggle::after {
-        top: 24px;
-    }
-
-    /* 中央の線は既存 span（最初の span）を使うが、もし消えている場合は疑似要素で代替 */
-    .menu-toggle .fallback-mid {
-        display: block;
-        position: absolute;
-        left: 14px;
-        top: 18px;
-        width: 20px;
-        height: 2px;
-        background: #fff;
-        border-radius: 2px;
-        z-index: 9999;
-    }
-
-    /* トグルをもっと目立たせる（常に表示） */
-    .menu-toggle {
-        background: rgba(255,255,255,0.04);
-        border-radius: 4px;
-        box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        bottom: 10px;
     }
 
     header nav {
@@ -491,13 +490,13 @@ footer {
         top: calc(100% + 8px);
         right: 12px;
         left: auto;
-        background-color: #18171C;
+        background-color: var(--surface-muted);
         z-index: 50;
         transform-origin: top right;
         transform: scaleY(0);
         transition: transform 0.18s ease;
         overflow: hidden;
-        border-radius: 6px;
+        border-radius: var(--radius);
         box-shadow: 0 6px 20px rgba(0,0,0,0.25);
     }
 
@@ -522,33 +521,27 @@ footer {
         overflow-x: hidden;
     }
 
-    /* 3. メニューの画像とテキストをスマホでは縦に並べる（必要に応じて） */
+    /* 3. メニューの画像とテキストをスマホでは縦に並べる */
     .menu-box {
-        flex-direction: column !important;
+        flex-direction: column;
         text-align: center;
     }
 
-    .menu-box img, 
-    .menu-box div[style*="background-color"] {
-        margin: 0 auto 10px auto !important; /* 画像を中央に配置 */
+    .menu-box img,
+    .menu-box .image-placeholder {
+        margin: 0 auto 10px;
     }
 
     /* 4. メインコンテンツの横幅を画面いっぱいに広げる */
-    main.content, 
-    div.content {
-        width: 100% !important;
-        padding: 0 12px !important;
-        margin: 20px auto !important;
+    .content,
+    .page-content {
+        width: 100%;
+        padding: 0 12px;
+        margin: 20px auto;
     }
 
     /* モバイルのヒーローはスマホ用画像を使い、左右余白をなくす */
     .hero-image-area {
-        background-image: url('image/smartHeader.png');
-        background-size: cover;
-        background-position: center center;
-        min-height: 70vh;
-        background-color: #18171C; /* 画像が切れたときに白く見えないようにする */
-        overflow: hidden;
         width: 100%;
         margin: 0;
     }
