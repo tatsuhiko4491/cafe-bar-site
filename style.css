@@ -81,15 +81,26 @@ header nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* --- ホームの画像エリア（画面いっぱいにHeader.pngを表示） --- */
+/* --- ホームの画像エリア（背景表示・coverでトリミング） --- */
 .hero-image-area {
     width: 100%;
-    min-height: 50vh;
-    height: auto;
     background-image: url('image/Header.png');
-    background-size: cover;       /* 画像を崩さずにエリア全体にフィットさせる */
-    background-position: center;  /* 画像の中央を表示 */
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
+    min-height: 50vh;
+}
+
+/* モバイルではスマホ用画像を使い、左右の余白を打ち消す */
+@media screen and (max-width: 768px) {
+    .hero-image-area {
+        background-image: url('image/smartHeader.png');
+        background-size: cover;
+        background-position: center top;
+        min-height: 70vh;
+        margin-left: -10px; /* body 側の左右パディングを相殺 */
+        margin-right: -10px;
+    }
 }
 
 /* --- スクロールした先に出てくる文章・ボタンエリア --- */
@@ -384,12 +395,5 @@ footer {
         margin: 20px auto !important;
     }
 
-    /* スマホでヘッダー画像をスマホ用画像に切替 */
-    .hero-image-area {
-        background-image: url('image/smartHeader.png');
-        background-size: contain;
-        background-position: center top;
-        background-repeat: no-repeat;
-        min-height: 100vh;
-    }
+    /* モバイルでは hero 内の <picture> が smartHeader.png を選択するため、ここでの背景置換は不要 */
 }
