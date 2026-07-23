@@ -44,13 +44,13 @@ button:focus-visible,
     outline-offset: 2px;
 }
 
-/* --- ヘッダーロゴのリンクスタイル（インラインstyleから移動） --- */
+/* --- ヘッダーロゴのリンクスタイル --- */
 header .logo a {
     color: #fff;
     text-decoration: none;
 }
 
-/* ページの見出し・サブタイトル共通クラス（menu-day/menu-nightのinline style収束） */
+/* ページの見出し・サブタイトル共通クラス */
 .page-title {
     text-align: center;
     margin-bottom: 30px;
@@ -65,7 +65,7 @@ header .logo a {
 
 /* --- ヘッダーのデザイン（全ページ共通） --- */
 header {
-    background-color: #18171C; /* 指定された黒に変更 */
+    background-color: #18171C;
     color: #fff;
     padding: 15px 40px;
     display: flex;
@@ -123,7 +123,7 @@ header nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* --- ホームの画像エリア（画像要素で表示） --- */
+/* --- ホームの画像エリア --- */
 .hero-image-area {
     width: 100%;
     overflow: hidden;
@@ -144,10 +144,10 @@ header nav ul li a:hover {
 
 /* --- スクロールした先に出てくる文章・ボタンエリア --- */
 .hero-content-area {
-    background-color: #18171C;    /* 指定されたお好みの黒色 */
+    background-color: #18171C;
     color: #fff;
     text-align: center;
-    padding: 80px 20px;           /* 上下の余白 */
+    padding: 80px 20px;
 }
 
 .hero-content-area h1 {
@@ -171,7 +171,7 @@ header nav ul li a:hover {
 .btn {
     display: inline-block;
     padding: 12px 24px;
-    background-color: #c5a059; /* バー風のゴールド */
+    background-color: #c5a059;
     color: #fff;
     text-decoration: none;
     border-radius: 4px;
@@ -445,7 +445,7 @@ body.night-style .limited-menu-card {
 
 /* --- フッター（全ページ共通） --- */
 footer {
-    background-color: #18171C; /* ヘッダーに合わせて統一 */
+    background-color: #18171C;
     color: #aaa;
     text-align: center;
     padding: 20px;
@@ -458,13 +458,11 @@ footer {
    ========================================== */
 @media screen and (max-width: 768px) {
 
-    /* 1. 全体の余白や文字サイズをスマホ用に調整 */
     body {
         font-size: 14px;
         padding: 0;
     }
 
-    /* 2. ヘッダーのメニューを縦並びまたはコンパクトにする */
     header {
         flex-wrap: wrap;
         padding: 10px 12px;
@@ -474,33 +472,7 @@ footer {
         left: 0;
     }
 
-    .menu-toggle {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 8px;
-        right: 12px;
-        width: 48px;
-        height: 40px;
-        padding: 6px;
-        z-index: 60;
-        background: rgba(255,255,255,0.04);
-        border-radius: 4px;
-        box-shadow: 0 1px 2px rgba(0,0,0,0.3);
-    }
-
-    .menu-toggle span {
-        width: 20px;
-        height: 2px;
-        background-color: #fff;
-        border-radius: 2px;
-        display: block;
-        margin: 3px 0;
-        transition: transform 0.2s ease, opacity 0.2s ease;
-        position: static;
-    }
-
+    /* ハンバーガーボタンのスタイル（重複を統合） */
     .menu-toggle {
         display: inline-flex;
         flex-direction: column;
@@ -533,13 +505,14 @@ footer {
         width: 100%;
     }
 
+    /* メニューリスト（ドロップダウン部分・開閉アニメーション修正済） */
     header nav ul {
         display: block;
         flex-direction: column;
         gap: 0;
         padding: 0;
         margin: 0;
-        width: 220px; /* ドロップダウンの幅 */
+        width: 220px;
         position: absolute;
         top: calc(100% + 8px);
         right: 12px;
@@ -548,14 +521,19 @@ footer {
         z-index: 50;
         transform-origin: top right;
         transform: scaleY(0);
-        transition: transform 0.18s ease;
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.18s ease, opacity 0.18s ease, visibility 0.18s ease;
         overflow: hidden;
         border-radius: var(--radius);
         box-shadow: 0 6px 20px rgba(0,0,0,0.25);
     }
 
+    /* チェックボックスが入ったときにメニューを表示する */
     #menu-toggle-checkbox:checked + .menu-toggle + nav ul {
         transform: scaleY(1);
+        opacity: 1;
+        visibility: visible;
     }
 
     header nav ul li {
@@ -575,7 +553,6 @@ footer {
         overflow-x: hidden;
     }
 
-    /* 3. メニューの画像とテキストをスマホでは縦に並べる */
     .menu-box {
         flex-direction: column;
         text-align: center;
@@ -586,7 +563,6 @@ footer {
         margin: 0 auto 10px;
     }
 
-    /* 4. メインコンテンツの横幅を画面いっぱいに広げる */
     .content,
     .page-content {
         width: 100%;
@@ -594,10 +570,8 @@ footer {
         margin: 20px auto;
     }
 
-    /* モバイルのヒーローはスマホ用画像を使い、左右余白をなくす */
     .hero-image-area {
         width: 100%;
         margin: 0;
     }
-
 }
