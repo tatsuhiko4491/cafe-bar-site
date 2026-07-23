@@ -21,6 +21,25 @@ img {
     display: block;
 }
 
+/* --- ヘッダーロゴのリンクスタイル（インラインstyleから移動） --- */
+header .logo a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* ページの見出し・サブタイトル共通クラス（menu-day/menu-nightのinline style収束） */
+.page-title {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #c5a059;
+    padding-bottom: 10px;
+}
+
+.page-subtitle {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
 /* --- ヘッダーのデザイン（全ページ共通） --- */
 header {
     background-color: #18171C; /* 指定された黒に変更 */
@@ -81,28 +100,22 @@ header nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* --- ホームの画像エリア（背景表示・coverでトリミング） --- */
+/* --- ホームの画像エリア（画像要素で表示） --- */
 .hero-image-area {
     width: 100%;
-    background-image: url('image/Header.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 50vh;
+    overflow: hidden;
 }
 
-/* モバイルではスマホ用画像を使い、左右の余白を打ち消す */
+.hero-image-area img.hero-image {
+    display: block;
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+}
+
 @media screen and (max-width: 768px) {
-    .hero-image-area {
-        background-image: url('image/smartHeader.png');
-        background-size: cover;
-        background-position: center center;
-        min-height: 70vh;
-        background-color: #18171C; /* 画像が切れたときに白く見えないようにする */
-        overflow: hidden;
-        width: calc(100% + 20px);
-        margin-left: -10px; /* body 側の左右パディングを相殺して端まで伸ばす */
-        margin-right: -10px;
+    .hero-image-area img.hero-image {
+        height: 75vh;
     }
 }
 

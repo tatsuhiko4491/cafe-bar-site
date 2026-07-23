@@ -11,15 +11,15 @@
     <!-- ヘッダー（全ページ共通） -->
     <header>
         <div class="logo">
-            <a href="index.html" style="color: #fff; text-decoration: none;">CAFE & BAR Twilight</a>
+            <a href="index.html">CAFE & BAR Twilight</a>
         </div>
-        <input type="checkbox" id="menu-toggle-checkbox" class="menu-checkbox">
-        <label for="menu-toggle-checkbox" class="menu-toggle" aria-label="メニューを開く">
+        <input type="checkbox" id="menu-toggle-checkbox" class="menu-checkbox" aria-controls="main-navigation" aria-expanded="false">
+        <label for="menu-toggle-checkbox" class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
         </label>
-        <nav id="main-navigation">
+        <nav id="main-navigation" aria-label="Main navigation">
             <ul>
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="concept.html">CONCEPT</a></li>
@@ -38,25 +38,26 @@
 
     <!-- メインコンテンツ -->
     <main class="content">
-        <h2 style="text-align: center; margin-bottom: 30px; border-bottom: 2px solid #c5a059; padding-bottom: 10px;">DAY MENU</h2>
-        <p style="text-align: center; margin-bottom: 30px;">明るい陽光の中で楽しむ、こだわりのコーヒーと軽食</p>
+        <h2 class="page-title">DAY MENU</h2>
+        <p class="page-subtitle">明るい陽光の中で楽しむ、こだわりのコーヒーと軽食</p>
 
         <!-- メニューカテゴリ切り替えタブ -->
-        <div class="menu-category-tabs">
-            <button class="tab-btn active" data-category="drinks">🍵 ドリンク</button>
-            <button class="tab-btn" data-category="foods">🍽️ フード</button>
+        <div class="menu-category-tabs" role="tablist" aria-label="Menu categories">
+            <button class="tab-btn active" data-category="drinks" role="tab" aria-selected="true" tabindex="0">🍵 ドリンク</button>
+            <button class="tab-btn" data-category="foods" role="tab" aria-selected="false" tabindex="-1">🍽️ フード</button>
+            <button class="tab-btn" data-category="sets" role="tab" aria-selected="false" tabindex="-1">🍱 セット</button>
         </div>
 
         <!-- ドリンクメニュー -->
         <div class="menu-section active" data-category="drinks">
             <section>
                 <h3>コーヒー</h3>
-                <div class="menu-box"><img src="image/drinkImages/coffee/アメリカンコーヒー.jpg" alt="アメリカン"><div class="menu-info"><div class="menu-header"><span>アメリカン</span><span>500円</span></div><p class="menu-desc">すっきりと軽い口当たりで、苦味が少なくブラックでも飲みやすい一杯です。</p></div></div>
-                <div class="menu-box"><img src="image/drinkImages/coffee/エスプレッソ.jpg" alt="エスプレッソ"><div class="menu-info"><div class="menu-header"><span>エスプレッソ</span><span>450円</span></div><p class="menu-desc">豆の旨味と深いコクをギュッと凝縮した、濃厚でビターな本格派です。</p></div></div>
-                <div class="menu-box"><img src="image/drinkImages/coffee/カフェラテ.jpg" alt="カフェラテ"><div class="menu-info"><div class="menu-header"><span>カフェラテ</span><span>600円</span></div><p class="menu-desc">エスプレッソの豊かな香りと、たっぷりのミルクが織りなすまろやかな味わいです。</p></div></div>
-                <div class="menu-box"><img src="image/drinkImages/coffee/カプチーノ.jpg" alt="カプチーノ"><div class="menu-info"><div class="menu-header"><span>カプチーノ</span><span>600円</span></div><p class="menu-desc">きめ細やかなふわふわのミルクフォームと、コーヒーの苦味が絶妙に調和します。</p></div></div>
-                <div class="menu-box"><img src="image/drinkImages/coffee/カフェオレ.jpg" alt="カフェオレ"><div class="menu-info"><div class="menu-header"><span>カフェオレ</span><span>580円</span></div><p class="menu-desc">ドリップコーヒーをベースにミルクを合わせた、どこかホッとする優しい味わいです。</p></div></div>
-                <div class="menu-box"><img src="image/drinkImages/coffee/アメリカーノ.jpg" alt="アメリカーノ"><div class="menu-info"><div class="menu-header"><span>アメリカーノ</span><span>500円</span></div><p class="menu-desc">エスプレッソをお湯で割ることで、芳醇な香りを残しつつすっきりとした後味に仕上げました。</p></div></div>
+                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/coffee/アメリカンコーヒー.jpg" alt="アメリカン"><div class="menu-info"><div class="menu-header"><span>アメリカン</span><span>500円</span></div><p class="menu-desc">すっきりと軽い口当たりで、苦味が少なくブラックでも飲みやすい一杯です。</p></div></div>
+                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/coffee/エスプレッソ.jpg" alt="エスプレッソ"><div class="menu-info"><div class="menu-header"><span>エスプレッソ</span><span>450円</span></div><p class="menu-desc">豆の旨味と深いコクをギュッと凝縮した、濃厚でビターな本格派です。</p></div></div>
+                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/coffee/カフェラテ.jpg" alt="カフェラテ"><div class="menu-info"><div class="menu-header"><span>カフェラテ</span><span>600円</span></div><p class="menu-desc">エスプレッソの豊かな香りと、たっぷりのミルクが織りなすまろやかな味わいです。</p></div></div>
+                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/coffee/カプチーノ.jpg" alt="カプチーノ"><div class="menu-info"><div class="menu-header"><span>カプチーノ</span><span>600円</span></div><p class="menu-desc">きめ細やかなふわふわのミルクフォームと、コーヒーの苦味が絶妙に調和します。</p></div></div>
+                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/coffee/カフェオレ.jpg" alt="カフェオレ"><div class="menu-info"><div class="menu-header"><span>カフェオレ</span><span>580円</span></div><p class="menu-desc">ドリップコーヒーをベースにミルクを合わせた、どこかホッとする優しい味わいです。</p></div></div>
+                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/coffee/アメリカーノ.jpg" alt="アメリカーノ"><div class="menu-info"><div class="menu-header"><span>アメリカーノ</span><span>500円</span></div><p class="menu-desc">エスプレッソをお湯で割ることで、芳醇な香りを残しつつすっきりとした後味に仕上げました。</p></div></div>
             </section>
 
             <section>
@@ -110,21 +111,81 @@
     </footer>
 
     <script>
-        document.querySelectorAll('.tab-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                const category = this.dataset.category;
-                
-                // タブのアクティブ状態を更新
-                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
-                
-                // メニューセクションの表示/非表示を切り替え
-                document.querySelectorAll('.menu-section').forEach(section => {
-                    section.classList.remove('active');
-                });
-                document.querySelector(`.menu-section[data-category="${category}"]`).classList.add('active');
+        // タブ切替（クリック＋キーボード対応）、aria属性の管理
+        const tabs = Array.from(document.querySelectorAll('.menu-category-tabs .tab-btn'));
+        const sections = Array.from(document.querySelectorAll('.menu-section'));
+
+        function activateTab(index) {
+            tabs.forEach((t, i) => {
+                const selected = i === index;
+                t.classList.toggle('active', selected);
+                t.setAttribute('aria-selected', selected ? 'true' : 'false');
+                t.tabIndex = selected ? 0 : -1;
+            });
+            const category = tabs[index].dataset.category;
+            sections.forEach(s => s.classList.toggle('active', s.dataset.category === category));
+            tabs[index].focus();
+        }
+
+        tabs.forEach((button, i) => {
+            button.addEventListener('click', () => activateTab(i));
+            button.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') activateTab((i + 1) % tabs.length);
+                if (e.key === 'ArrowLeft') activateTab((i - 1 + tabs.length) % tabs.length);
             });
         });
+
+        // ナビ（ハンバーガー）のアクセシビリティ補助
+        const menuCheckbox = document.getElementById('menu-toggle-checkbox');
+        const menuToggleLabel = document.querySelector('.menu-toggle');
+        const mainNav = document.getElementById('main-navigation');
+
+        function updateMenuAria() {
+            const opened = menuCheckbox.checked;
+            menuToggleLabel.setAttribute('aria-expanded', opened ? 'true' : 'false');
+            menuCheckbox.setAttribute('aria-expanded', opened ? 'true' : 'false');
+            if (opened) enableFocusTrap(); else disableFocusTrap();
+        }
+
+        // フォーカストラップ
+        let previousFocus = null;
+        let focusable = [];
+        let trapHandler = null;
+
+        function enableFocusTrap(){
+            previousFocus = document.activeElement;
+            focusable = Array.from(mainNav.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])')).filter(el => !el.hasAttribute('disabled'));
+            if (focusable.length) focusable[0].focus();
+            trapHandler = function(e){
+                if (e.key !== 'Tab') return;
+                const first = focusable[0];
+                const last = focusable[focusable.length -1];
+                if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+                else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+            };
+            document.addEventListener('keydown', trapHandler);
+        }
+
+        function disableFocusTrap(){
+            if (trapHandler) document.removeEventListener('keydown', trapHandler);
+            trapHandler = null;
+            if (previousFocus) previousFocus.focus();
+        }
+
+        menuCheckbox.addEventListener('change', updateMenuAria);
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                menuCheckbox.checked = false;
+                updateMenuAria();
+            }
+        });
+        document.addEventListener('click', (e) => {
+            if (menuCheckbox.checked && !mainNav.contains(e.target) && !menuToggleLabel.contains(e.target)) {
+                menuCheckbox.checked = false;
+                updateMenuAria();
+            }
+        });
+
     </script>
 
 </body>

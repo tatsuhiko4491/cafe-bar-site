@@ -11,15 +11,15 @@
     <!-- ヘッダー（全ページ共通） -->
     <header>
         <div class="logo">
-            <a href="index.html" style="color: #fff; text-decoration: none;">CAFE & BAR Twilight</a>
+            <a href="index.html">CAFE & BAR Twilight</a>
         </div>
-        <input type="checkbox" id="menu-toggle-checkbox" class="menu-checkbox">
-        <label for="menu-toggle-checkbox" class="menu-toggle" aria-label="メニューを開く">
+        <input type="checkbox" id="menu-toggle-checkbox" class="menu-checkbox" aria-controls="main-navigation" aria-expanded="false">
+        <label for="menu-toggle-checkbox" class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
         </label>
-        <nav id="main-navigation">
+        <nav id="main-navigation" aria-label="Main navigation">
             <ul>
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="concept.html">CONCEPT</a></li>
@@ -32,7 +32,11 @@
 
     <!-- ① ヘッダー直下に表示する画像エリア（文字を置かない） -->
     <section class="hero-image-area">
-        <!-- 背景画像はCSSで切り替えています（スマホ: image/smartHeader.png / PC: image/Header.png） -->
+        <picture>
+            <source media="(max-width:768px)" srcset="image/smartHeader.png">
+            <source media="(min-width:769px)" srcset="image/Header.png">
+            <img src="image/Header.png" alt="CAFE & BAR Twilight" class="hero-image" loading="eager" decoding="sync">
+        </picture>
     </section>
 
     <!-- ② スクロールすると現れる、文章やボタンのエリア -->
@@ -51,6 +55,23 @@
     <footer>
         <p>&copy; 2026 CAFE & BAR Twilight All Rights Reserved.</p>
     </footer>
+
+    <script>
+        (function(){
+            const menuCheckbox = document.getElementById('menu-toggle-checkbox');
+            const menuToggleLabel = document.querySelector('.menu-toggle');
+            const mainNav = document.getElementById('main-navigation');
+            if (!menuCheckbox) return;
+            function updateMenuAria(){
+                const opened = menuCheckbox.checked;
+                menuToggleLabel.setAttribute('aria-expanded', opened ? 'true' : 'false');
+                menuCheckbox.setAttribute('aria-expanded', opened ? 'true' : 'false');
+            }
+            menuCheckbox.addEventListener('change', updateMenuAria);
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { menuCheckbox.checked = false; updateMenuAria(); }});
+            document.addEventListener('click', (e) => { if (menuCheckbox.checked && !mainNav.contains(e.target) && !menuToggleLabel.contains(e.target)) { menuCheckbox.checked = false; updateMenuAria(); }});
+        })();
+    </script>
 
 </body>
 </html>

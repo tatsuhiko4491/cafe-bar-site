@@ -11,10 +11,10 @@
     <!-- ヘッダー（全ページ共通） -->
     <header>
     <div class="logo">
-        <a href="index.html" style="color: #fff; text-decoration: none;">CAFE & BAR Twilight</a>
+        <a href="index.html">CAFE & BAR Twilight</a>
     </div>
-    <input type="checkbox" id="menu-toggle-checkbox" class="menu-checkbox">
-    <label for="menu-toggle-checkbox" class="menu-toggle" aria-label="メニューを開く">
+    <input type="checkbox" id="menu-toggle-checkbox" class="menu-checkbox" aria-controls="main-navigation" aria-expanded="false">
+    <label for="menu-toggle-checkbox" class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -71,6 +71,26 @@
     <footer>
         <p>&copy; 2026 CAFE & BAR Twilight All Rights Reserved.</p>
     </footer>
+    <script>
+        (function(){
+            const menuCheckbox = document.getElementById('menu-toggle-checkbox');
+            const menuToggleLabel = document.querySelector('.menu-toggle');
+            const mainNav = document.getElementById('main-navigation');
+            if (!menuCheckbox) return;
+            function updateMenuAria(){
+                const opened = menuCheckbox.checked;
+                menuToggleLabel.setAttribute('aria-expanded', opened ? 'true' : 'false');
+                menuCheckbox.setAttribute('aria-expanded', opened ? 'true' : 'false');
+                if (opened) enableFocusTrap(); else disableFocusTrap();
+            }
+            let prevFocus = null; let focusable = []; let trapHandler = null;
+            function enableFocusTrap(){ prevFocus = document.activeElement; focusable = Array.from(mainNav.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])')).filter(el=>!el.disabled); if(focusable.length) focusable[0].focus(); trapHandler = function(e){ if(e.key!=='Tab') return; const first=focusable[0], last=focusable[focusable.length-1]; if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); } else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }}; document.addEventListener('keydown', trapHandler); }
+            function disableFocusTrap(){ if(trapHandler) document.removeEventListener('keydown', trapHandler); trapHandler=null; if(prevFocus) prevFocus.focus(); }
+            menuCheckbox.addEventListener('change', updateMenuAria);
+            document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ menuCheckbox.checked=false; updateMenuAria(); }});
+            document.addEventListener('click', (e)=>{ if(menuCheckbox.checked && !mainNav.contains(e.target) && !menuToggleLabel.contains(e.target)){ menuCheckbox.checked=false; updateMenuAria(); }});
+        })();
+    </script>
 
 </body>
 </html>

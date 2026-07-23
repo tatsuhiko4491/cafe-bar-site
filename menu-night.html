@@ -11,15 +11,15 @@
     <!-- ヘッダー（全ページ共通） -->
     <header>
         <div class="logo">
-            <a href="index.html" style="color: #fff; text-decoration: none;">CAFE & BAR Twilight</a>
+            <a href="index.html">CAFE & BAR Twilight</a>
         </div>
-        <input type="checkbox" id="menu-toggle-checkbox" class="menu-checkbox">
-        <label for="menu-toggle-checkbox" class="menu-toggle" aria-label="メニューを開く">
+        <input type="checkbox" id="menu-toggle-checkbox" class="menu-checkbox" aria-controls="main-navigation" aria-expanded="false">
+        <label for="menu-toggle-checkbox" class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
         </label>
-        <nav id="main-navigation">
+        <nav id="main-navigation" aria-label="Main navigation">
             <ul>
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="concept.html">CONCEPT</a></li>
@@ -38,13 +38,14 @@
 
     <!-- メインコンテンツ -->
     <main class="content">
-        <h2 style="text-align: center; margin-bottom: 30px; border-bottom: 2px solid #c5a059; padding-bottom: 10px;">NIGHT MENU</h2>
-        <p style="text-align: center; margin-bottom: 30px;">音楽と灯りに包まれて、大人の時間を愉しむお酒の数々</p>
+        <h2 class="page-title">NIGHT MENU</h2>
+        <p class="page-subtitle">音楽と灯りに包まれて、大人の時間を愉しむお酒の数々</p>
 
         <!-- メニューカテゴリ切り替えタブ -->
-        <div class="menu-category-tabs">
-            <button class="tab-btn active" data-category="drinks">🍸 ドリンク</button>
-            <button class="tab-btn" data-category="foods">🍽️ フード</button>
+        <div class="menu-category-tabs" role="tablist" aria-label="Menu categories">
+            <button class="tab-btn active" data-category="drinks" role="tab" aria-selected="true" tabindex="0">🍸 ドリンク</button>
+            <button class="tab-btn" data-category="foods" role="tab" aria-selected="false" tabindex="-1">🍽️ フード</button>
+            <button class="tab-btn" data-category="sets" role="tab" aria-selected="false" tabindex="-1">🍱 セット</button>
         </div>
 
         <!-- ドリンクメニュー -->
@@ -145,21 +146,81 @@
     </footer>
 
     <script>
-        document.querySelectorAll('.tab-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                const category = this.dataset.category;
-                
-                // タブのアクティブ状態を更新
-                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
-                
-                // メニューセクションの表示/非表示を切り替え
-                document.querySelectorAll('.menu-section').forEach(section => {
-                    section.classList.remove('active');
-                });
-                document.querySelector(`.menu-section[data-category="${category}"]`).classList.add('active');
+        // タブ切替（クリック＋キーボード対応）、aria属性の管理
+        const tabsN = Array.from(document.querySelectorAll('.menu-category-tabs .tab-btn'));
+        const sectionsN = Array.from(document.querySelectorAll('.menu-section'));
+
+        function activateTabN(index) {
+            tabsN.forEach((t, i) => {
+                const selected = i === index;
+                t.classList.toggle('active', selected);
+                t.setAttribute('aria-selected', selected ? 'true' : 'false');
+                t.tabIndex = selected ? 0 : -1;
+            });
+            const category = tabsN[index].dataset.category;
+            sectionsN.forEach(s => s.classList.toggle('active', s.dataset.category === category));
+            tabsN[index].focus();
+        }
+
+        tabsN.forEach((button, i) => {
+            button.addEventListener('click', () => activateTabN(i));
+            button.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') activateTabN((i + 1) % tabsN.length);
+                if (e.key === 'ArrowLeft') activateTabN((i - 1 + tabsN.length) % tabsN.length);
             });
         });
+
+        // ナビ（ハンバーガー）のアクセシビリティ補助
+        const menuCheckbox = document.getElementById('menu-toggle-checkbox');
+        const menuToggleLabel = document.querySelector('.menu-toggle');
+        const mainNav = document.getElementById('main-navigation');
+
+        function updateMenuAria() {
+            const opened = menuCheckbox.checked;
+            menuToggleLabel.setAttribute('aria-expanded', opened ? 'true' : 'false');
+            menuCheckbox.setAttribute('aria-expanded', opened ? 'true' : 'false');
+            if (opened) enableFocusTrapN(); else disableFocusTrapN();
+        }
+
+        // フォーカストラップ（ナイト）
+        let prevFocusN = null;
+        let focusableN = [];
+        let trapHandlerN = null;
+
+        function enableFocusTrapN(){
+            prevFocusN = document.activeElement;
+            focusableN = Array.from(mainNav.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])')).filter(el => !el.hasAttribute('disabled'));
+            if (focusableN.length) focusableN[0].focus();
+            trapHandlerN = function(e){
+                if (e.key !== 'Tab') return;
+                const first = focusableN[0];
+                const last = focusableN[focusableN.length -1];
+                if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+                else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+            };
+            document.addEventListener('keydown', trapHandlerN);
+        }
+
+        function disableFocusTrapN(){
+            if (trapHandlerN) document.removeEventListener('keydown', trapHandlerN);
+            trapHandlerN = null;
+            if (prevFocusN) prevFocusN.focus();
+        }
+
+        menuCheckbox.addEventListener('change', updateMenuAria);
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                menuCheckbox.checked = false;
+                updateMenuAria();
+            }
+        });
+        document.addEventListener('click', (e) => {
+            if (menuCheckbox.checked && !mainNav.contains(e.target) && !menuToggleLabel.contains(e.target)) {
+                menuCheckbox.checked = false;
+                updateMenuAria();
+            }
+        });
+
     </script>
 
 </body>
