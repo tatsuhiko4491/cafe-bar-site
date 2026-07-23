@@ -501,24 +501,32 @@ footer {
         position: static;
     }
 
-    .menu-toggle::before,
-    .menu-toggle::after {
-        content: "";
+    .menu-toggle {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         position: absolute;
-        left: 14px;
+        top: 8px;
+        right: 12px;
+        width: 48px;
+        height: 40px;
+        padding: 6px;
+        z-index: 60;
+        background: rgba(255,255,255,0.04);
+        border-radius: 4px;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
         width: 20px;
         height: 2px;
-        background: #fff;
+        background-color: #fff;
         border-radius: 2px;
-        z-index: 1;
-    }
-
-    .menu-toggle::before {
-        top: 10px;
-    }
-
-    .menu-toggle::after {
-        bottom: 10px;
+        display: block;
+        margin: 2px 0;
+        transition: transform 0.2s ease, opacity 0.2s ease;
     }
 
     header nav {
