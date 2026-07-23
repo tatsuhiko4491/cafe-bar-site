@@ -3,12 +3,22 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     margin: 0;
     font-family: sans-serif;
     line-height: 1.6;
     background-color: #fcfbfa; /* デフォルトの背景色 */
     color: #333333;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* --- ヘッダーのデザイン（全ページ共通） --- */
@@ -74,7 +84,8 @@ header nav ul li a:hover {
 /* --- ホームの画像エリア（画面いっぱいにHeader.pngを表示） --- */
 .hero-image-area {
     width: 100%;
-    height: 70vh;                  /* 画面の高さの70%（お好みで 60vh〜80vh に調整可能） */
+    min-height: 50vh;
+    height: auto;
     background-image: url('image/Header.png');
     background-size: cover;       /* 画像を崩さずにエリア全体にフィットさせる */
     background-position: center;  /* 画像の中央を表示 */
