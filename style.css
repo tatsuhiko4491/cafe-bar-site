@@ -364,6 +364,17 @@ footer {
         opacity: 1 !important;
     }
 
+    /* トグルのラベルを確実にタップできるように表示領域を広げる */
+    .menu-toggle {
+        display: inline-flex !important;
+        width: 48px !important;
+        height: 40px !important;
+        padding: 6px !important;
+        align-items: center !important;
+        justify-content: center !important;
+        overflow: visible !important;
+    }
+
     /* ハンバーガーの3本線を縦に並べて中央揃えにする */
     .menu-toggle {
         flex-direction: column;
@@ -386,6 +397,63 @@ footer {
         background-color: #fff !important;
         width: 18px !important;
         height: 2px !important;
+    }
+
+    /* トグルと線を最前面に出す（背景に隠れないように） */
+    .menu-toggle {
+        z-index: 9999 !important;
+    }
+
+    .menu-toggle span {
+        position: relative !important;
+        z-index: 10000 !important;
+    }
+
+    /* 中央ラインを確実に表示するため span を中央に位置させる */
+    .menu-toggle span {
+        position: absolute !important;
+        left: 14px !important;
+        top: 18px !important;
+        width: 20px !important;
+        height: 2px !important;
+        background-color: #fff !important;
+        margin: 0 !important;
+        display: block !important;
+        border-radius: 2px !important;
+    }
+
+    /* フォールバック：擬似要素で確実に3本線を描画する（spanが非表示のときも表示される） */
+    .menu-toggle::before,
+    .menu-toggle::after {
+        content: "";
+        position: absolute;
+        left: 14px;
+        width: 20px;
+        height: 2px;
+        background: #fff;
+        border-radius: 2px;
+        z-index: 9999;
+    }
+
+    .menu-toggle::before {
+        top: 12px;
+    }
+
+    .menu-toggle::after {
+        top: 24px;
+    }
+
+    /* 中央の線は既存 span（最初の span）を使うが、もし消えている場合は疑似要素で代替 */
+    .menu-toggle .fallback-mid {
+        display: block;
+        position: absolute;
+        left: 14px;
+        top: 18px;
+        width: 20px;
+        height: 2px;
+        background: #fff;
+        border-radius: 2px;
+        z-index: 9999;
     }
 
     /* トグルをもっと目立たせる（常に表示） */
