@@ -353,12 +353,22 @@ body.night-style .menu-box .menu-desc {
 
 /* --- 期間限定メニュー表示 --- */
 .limited-announcement {
-    background: rgba(197,160,89,0.08);
-    border: 1px solid rgba(197,160,89,0.25);
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.18);
     color: #222;
     padding: 16px 18px;
     border-radius: var(--radius);
     margin-bottom: 24px;
+}
+
+body.night-style .limited-announcement {
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.22);
+    color: #f5f3ef;
+}
+
+body.night-style .limited-announcement a {
+    color: #f3d17c;
 }
 
 .limited-announcement a {
