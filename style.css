@@ -68,6 +68,11 @@ footer {
     z-index: 1;
 }
 
+/* モバイルで展開するナビゲーションを、本文より常に前面に表示する */
+header {
+    z-index: 100;
+}
+
 main.page-content {
     max-width: 800px;
     margin: 40px auto;
