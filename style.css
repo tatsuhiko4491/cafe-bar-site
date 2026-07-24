@@ -15,7 +15,9 @@
     --header-offset: 64px;
     --header-height: 64px;
     --menu-tab-height: 80px;
+    --category-tabs-height: 74px;
     --menu-tab-offset: calc(var(--header-height) + var(--menu-tab-height));
+    --category-tab-offset: calc(var(--header-offset) + var(--menu-tab-height));
 }
 
 /* --- 共通の基本設定 --- */
@@ -420,13 +422,16 @@ body.night-style .menu-box .menu-desc {
     display: flex;
     gap: 10px;
     justify-content: center;
-    margin: 30px 0;
+    margin: 0;
     flex-wrap: wrap;
-    position: sticky;
-    top: var(--menu-tab-offset);
+    position: fixed;
+    top: var(--category-tab-offset);
+    right: 0;
+    left: 0;
     z-index: 80;
-    padding: 12px 0;
+    padding: 14px 0;
     background-color: var(--bg);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 body.night-style .menu-category-tabs {
@@ -435,7 +440,7 @@ body.night-style .menu-category-tabs {
 
 body.day-style .content,
 body.night-style .content {
-    margin-top: 160px;
+    margin-top: calc(var(--category-tab-offset) + var(--category-tabs-height) + 20px);
 }
 
 .menu-category-tabs button {
@@ -756,7 +761,7 @@ footer {
 
     .menu-category-tabs {
         position: fixed;
-        top: var(--menu-tab-offset);
+        top: var(--category-tab-offset);
         right: 12px;
         left: 12px;
         gap: 6px;
