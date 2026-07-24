@@ -1,164 +1,160 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAFE MENU - CAFE & BAR Twilight</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="day-style">
-
-    <!-- ヘッダー（全ページ共通） -->
-    <header>
-        <div class="logo">
-            <a href="index.html">CAFE & BAR Twilight</a>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CAFE MENU - CAFE & BAR Twilight</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="day-style">
+        <!-- ヘッダー（全ページ共通） -->
+        <header>
+            <div class="logo">
+                <a href="index.html">CAFE & BAR Twilight</a>
+            </div>
+            <input type="checkbox" id="menu-toggle-checkbox" class="menu-checkbox" aria-controls="main-navigation" tabindex="-1" aria-hidden="true">
+            <button type="button" class="menu-toggle" aria-controls="main-navigation" aria-label="メニューを開く" aria-expanded="false">
+                <span>
+                </span>
+                <span>
+                </span>
+                <span>
+                </span>
+            </button>
+            <nav id="main-navigation" aria-label="Main navigation">
+                <ul>
+                    <li>
+                        <a href="index.html">HOME</a>
+                    </li>
+                    <li>
+                        <a href="concept.html">CONCEPT</a>
+                    </li>
+                    <li>
+                        <a href="menu-day.html">MENU</a>
+                    </li>
+                    <li>
+                        <a href="event.html">EVENTS & SPACE</a>
+                    </li>
+                    <li>
+                        <a href="access.html">ACCESS</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- 昼と夜を切り替えるボタン -->
+        <div class="menu-tab">
+            <a href="menu-day.html" class="active-tab">☀️ 昼（カフェタイム）</a>
+            <a href="menu-night.html">🌙 夜（バータイム）</a>
         </div>
-        <input type="checkbox" id="menu-toggle-checkbox" class="menu-checkbox" aria-controls="main-navigation" tabindex="-1" aria-hidden="true">
-        <button type="button" class="menu-toggle" aria-controls="main-navigation" aria-label="メニューを開く" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav id="main-navigation" aria-label="Main navigation">
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="concept.html">CONCEPT</a></li>
-                <li><a href="menu-day.html">MENU</a></li>
-                <li><a href="event.html">EVENTS & SPACE</a></li>
-                <li><a href="access.html">ACCESS</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- 昼と夜を切り替えるボタン -->
-    <div class="menu-tab">
-        <a href="menu-day.html" class="active-tab">☀️ 昼（カフェタイム）</a>
-        <a href="menu-night.html">🌙 夜（バータイム）</a>
-    </div>
-
-    <!-- メインコンテンツ -->
-    <main class="content">
-        <h2 class="page-title">DAY MENU</h2>
-        <p class="page-subtitle">明るい陽光の中で楽しむ、こだわりのコーヒーと軽食</p>
-        <!-- 期間限定コーナー -->
-        <div class="limited-announcement">
-            <h3>期間限定コーナー</h3>
-            <p>期間限定メニューは <a href="event.html">EVENTS & SPACE</a> でご紹介中です。今だけのカクテル・フード・スイーツをチェックしてください。</p>
-        </div>
-
-        <!-- メニューカテゴリ切り替えタブ -->
-        <div class="menu-category-tabs" role="tablist" aria-label="Menu categories">
-            <button class="tab-btn active" data-category="drinks" role="tab" aria-selected="true" tabindex="0">🍵 ドリンク</button>
-            <button class="tab-btn" data-category="foods" role="tab" aria-selected="false" tabindex="-1">🍽️ フード</button>
-            <button class="tab-btn" data-category="sets" role="tab" aria-selected="false" tabindex="-1">🍱 セット</button>
-        </div>
-
-        <!-- ドリンクメニュー -->
-        <div class="menu-section active" data-category="drinks">
-            <section>
-                <h3>コーヒー</h3>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/coffee/アメリカンコーヒー.jpg" alt="アメリカン"><div class="menu-info"><div class="menu-header"><span>アメリカン</span><span>500円</span></div><p class="menu-desc">すっきりと軽い口当たりで、苦味が少なくブラックでも飲みやすい一杯です。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/coffee/エスプレッソ.jpg" alt="エスプレッソ"><div class="menu-info"><div class="menu-header"><span>エスプレッソ</span><span>450円</span></div><p class="menu-desc">豆の旨味と深いコクをギュッと凝縮した、濃厚でビターな本格派です。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/coffee/カフェラテ.jpg" alt="カフェラテ"><div class="menu-info"><div class="menu-header"><span>カフェラテ</span><span>600円</span></div><p class="menu-desc">エスプレッソの豊かな香りと、たっぷりのミルクが織りなすまろやかな味わいです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/coffee/カプチーノ.jpg" alt="カプチーノ"><div class="menu-info"><div class="menu-header"><span>カプチーノ</span><span>600円</span></div><p class="menu-desc">きめ細やかなふわふわのミルクフォームと、コーヒーの苦味が絶妙に調和します。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/coffee/カフェオレ.jpg" alt="カフェオレ"><div class="menu-info"><div class="menu-header"><span>カフェオレ</span><span>580円</span></div><p class="menu-desc">ドリップコーヒーをベースにミルクを合わせた、どこかホッとする優しい味わいです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/coffee/アメリカーノ.jpg" alt="アメリカーノ"><div class="menu-info"><div class="menu-header"><span>アメリカーノ</span><span>500円</span></div><p class="menu-desc">エスプレッソをお湯で割ることで、芳醇な香りを残しつつすっきりとした後味に仕上げました。</p></div></div>
-            </section>
-
-            <section>
-                <h3>紅茶</h3>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/ミルクティー.png" alt="ミルクティー"><div class="menu-info"><div class="menu-header"><span>ミルクティー</span><span>550円</span></div><p class="menu-desc">コクのある茶葉にミルクを加え、まろやかで深みのある味わいに仕立てました。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/ストレート(アールグレイ).png" alt="ストレート(アールグレイ)"><div class="menu-info"><div class="menu-header"><span>ストレート(アールグレイ)</span><span>550円</span></div><p class="menu-desc">ベルガモットの気品ある香りがふんわりと広がる、爽やかなストレートティーです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/レモンティー.png" alt="レモンティー"><div class="menu-info"><div class="menu-header"><span>レモンティー</span><span>550円</span></div><p class="menu-desc">フレッシュレモンの爽やかな酸味が、紅茶の香りを引き立てる定番の一杯です。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/ウーロン茶.png" alt="ウーロン茶"><div class="menu-info"><div class="menu-header"><span>ウーロン茶</span><span>450円</span></div><p class="menu-desc">すっきりとしたキレのある喉越しで、どんなお食事にもよく合います。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/緑茶.png" alt="緑茶"><div class="menu-info"><div class="menu-header"><span>緑茶</span><span>450円</span></div><p class="menu-desc">国産茶葉の豊かな香りと、お茶本来の程よい渋みが心地よい一杯です。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/チャイ.png" alt="チャイ"><div class="menu-info"><div class="menu-header"><span>チャイ</span><span>650円</span></div><p class="menu-desc">数種類のスパイスが複雑に香る、心も身体も温まる濃厚なミルクティーです。</p></div></div>
-            </section>
-
-            <section>
-                <h3>ソフトドリンク</h3>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/メロンソーダ.png" alt="メロンソーダ"><div class="menu-info"><div class="menu-header"><span>メロンソーダ</span><span>480円</span></div><p class="menu-desc">鮮やかな緑色とシュワっと弾む炭酸が懐かしい、甘く爽やかなソーダです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/コーラ.png" alt="コーラ"><div class="menu-info"><div class="menu-header"><span>コーラ</span><span>480円</span></div><p class="menu-desc">ピリッとした刺激と爽快な甘みが広がる、お馴染みの炭酸飲料です。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/ジンジャーエール.png" alt="ジンジャーエール"><div class="menu-info"><div class="menu-header"><span>ジンジャーエール</span><span>480円</span></div><p class="menu-desc">生姜のピリッとした辛みが効いた、大人な味わいのキリッとした炭酸です。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/りんごジュース.png" alt="りんごジュース"><div class="menu-info"><div class="menu-header"><span>りんごジュース</span><span>480円</span></div><p class="menu-desc">りんご本来の自然な甘みと、フルーティーで優しい香りが楽しめます。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/オレンジジュース.png" alt="オレンジジュース"><div class="menu-info"><div class="menu-header"><span>オレンジジュース</span><span>480円</span></div><p class="menu-desc">ジューシーなオレンジの爽やかな酸味とすっきりした甘みが広がります。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/カルピス.png" alt="カルピス"><div class="menu-info"><div class="menu-header"><span>カルピス</span><span>480円</span></div><p class="menu-desc">甘酸っぱくてまろやかな味わいが、子供から大人まで愛される定番のドリンクです。</p></div></div>
-            </section>
-        </div>
-
-        <!-- フードメニュー -->
-        <div class="menu-section" data-category="foods">
-            <section>
-                <h3>サンドウィッチ</h3>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/ハムチーズサンド.png" alt="ハムチーズサンド"><div class="menu-info"><div class="menu-header"><span>ハムチーズサンド</span><span>720円</span></div><p class="menu-desc">香ばしく焼いたパンに、ハムとチーズのハーモニーをシンプルに詰めました。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/ツナマヨサンド.png" alt="ツナマヨサンド"><div class="menu-info"><div class="menu-header"><span>ツナマヨサンド</span><span>700円</span></div><p class="menu-desc">新鮮なツナとマヨネーズの爽やかな組み合わせが絶品です。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/エッグサンド.png" alt="エッグサンド"><div class="menu-info"><div class="menu-header"><span>エッグサンド</span><span>680円</span></div><p class="menu-desc">ふんわりとしたスクランブルエッグをたっぷり詰めた、朝食の定番です。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/フルーツサンド.png" alt="フルーツサンド"><div class="menu-info"><div class="menu-header"><span>フルーツサンド</span><span>750円</span></div><p class="menu-desc">鮮やかなフルーツをたっぷり乗せた、やさしい甘さが魅力のサンドです。</p></div></div>
-            </section>
-
-            <section>
-                <h3>ペストリー</h3>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/バターロール.png" alt="バターロール"><div class="menu-info"><div class="menu-header"><span>バターロール</span><span>450円</span></div><p class="menu-desc">塩分が心地よい、バターの香りが引き立つクラシックなロールです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/クロワッサン.png" alt="クロワッサン"><div class="menu-info"><div class="menu-header"><span>クロワッサン</span><span>500円</span></div><p class="menu-desc">サクサクとした層状の食感と、バターの豊かな香りが特徴です。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/チョコクロワッサン.png" alt="チョコクロワッサン"><div class="menu-info"><div class="menu-header"><span>チョコクロワッサン</span><span>550円</span></div><p class="menu-desc">濃厚なチョコレートの甘みと、クロワッサンのサクサク食感が相性抜群です。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/トースト.png" alt="トースト"><div class="menu-info"><div class="menu-header"><span>トースト</span><span>450円</span></div><p class="menu-desc">香ばしく焼き上げたトーストは、シンプルに楽しみたい朝にぴったりです。</p></div></div>
-            </section>
-
-            <section>
-                <h3>スイーツ</h3>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/チーズケーキ.png" alt="チーズケーキ"><div class="menu-info"><div class="menu-header"><span>チーズケーキ</span><span>650円</span></div><p class="menu-desc">濃厚でなめらかなチーズの風味が、優雅な甘さで仕上がっています。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/ガトーショコラ.png" alt="ガトーショコラ"><div class="menu-info"><div class="menu-header"><span>ガトーショコラ</span><span>700円</span></div><p class="menu-desc">深い味わいのダークチョコレートを使った、濃厚で艶やかなケーキです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/アップルパイ.png" alt="アップルパイ"><div class="menu-info"><div class="menu-header"><span>アップルパイ</span><span>680円</span></div><p class="menu-desc">シナモンの香りが心地よい、季節の王道スイーツです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/モンブラン.png" alt="モンブラン"><div class="menu-info"><div class="menu-header"><span>モンブラン</span><span>650円</span></div><p class="menu-desc">栗の豊かな風味が口いっぱいに広がる、上品で贅沢な大人のデザートです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/パフェ.png" alt="パフェ"><div class="menu-info"><div class="menu-header"><span>パフェ（旬の物）</span><span>850円</span></div><p class="menu-desc">その時期一番美味しい季節の素材をふんだんに盛り込んだ、見た目も華やかなパフェです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/フルーツタルト.png" alt="フルーツタルト"><div class="menu-info"><div class="menu-header"><span>フルーツタルト</span><span>650円</span></div><p class="menu-desc">サクサクのタルト生地の上に、瑞々しいフルーツを贅沢にトッピングしました。</p></div></div>
-            </section>
-
-            <section>
-                <h3>昼夜兼用メニュー</h3>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/カレーライス.png" alt="カレーライス"><div class="menu-info"><div class="menu-header"><span>カレーライス</span><span>980円</span></div><p class="menu-desc">スパイスの香りとコク深いルウが後を引く、何度でも食べたくなる王道の味です。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/エッグハンバーグ.png" alt="エッグハンバーグ"><div class="menu-info"><div class="menu-header"><span>エッグハンバーグ</span><span>1,100円</span></div><p class="menu-desc">肉汁あふれるハンバーグに目玉焼きを乗せた、大人もワクワクする人気メニューです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/ハヤシライス.png" alt="ハヤシライス"><div class="menu-info"><div class="menu-header"><span>ハヤシライス</span><span>980円</span></div><p class="menu-desc">玉ねぎの甘みと赤ワインのコクが溶け込んだ、まろやかで優しい味わいです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/オムライス（ケチャップ）.png" alt="オムライス"><div class="menu-info"><div class="menu-header"><span>オムライス</span><span>1,000円</span></div><p class="menu-desc">とろとろの卵で包み込んだ、特製ソースが絶品の美しいオムライスです。</p></div></div>
-            </section>
-
-            <section>
-                <h3>ランチ</h3>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/ナポリタン.png" alt="ナポリタン"><div class="menu-info"><div class="menu-header"><span>ナポリタン</span><span>880円</span></div><p class="menu-desc">どこか懐かしさを感じる、もっちり麺と特製ソースの定番ランチパスタです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/ホットドッグ.png" alt="ホットドッグ"><div class="menu-info"><div class="menu-header"><span>ホットドッグ</span><span>780円</span></div><p class="menu-desc">パリッとジューシーなソーセージを挟んだ、ランチに手軽に楽しめる一品です。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/チキンステーキ.png" alt="チキンステーキ"><div class="menu-info"><div class="menu-header"><span>チキンステーキ</span><span>980円</span></div><p class="menu-desc">皮目はパリッと、中はジューシーに焼き上げたボリューム満点のチキンです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/シーフードドリア.png" alt="シーフードドリア"><div class="menu-info"><div class="menu-header"><span>シーフードドリア</span><span>950円</span></div><p class="menu-desc">魚介の旨味がホワイトソースとチーズにギュッと詰まった熱々メニューです。</p></div></div>
-            </section>
-
-
-        </div>
-
-        <!-- セットメニュー -->
-        <div class="menu-section" data-category="sets">
-            <section>
-                <h3>morningセット</h3>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/sets/メイン＋ドリンク（昼）.png" alt="メイン＋ドリンク"><div class="menu-info"><div class="menu-header"><span>メイン＋ドリンク</span><span>900円</span></div><p class="menu-desc">朝限定のモーニングセット。お好きなメインと、コーヒー・紅茶・ソフトドリンクから1杯をお選びいただけます。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/sets/メイン＋スイーツ＋ドリンク（昼）.png" alt="メイン＋スイーツ＋ドリンク"><div class="menu-info"><div class="menu-header"><span>メイン＋スイーツ＋ドリンク</span><span>1,200円</span></div><p class="menu-desc">メインに加えて、スイーツとドリンクを組み合わせた、ゆったり朝の贅沢セットです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/sets/メインの選択肢.png" alt="メインの選択肢"><div class="menu-info"><div class="menu-header"><span>メインの選択肢</span><span>選べます</span></div><p class="menu-desc">エッグベネディクト、フレンチトースト、パンケーキ、サンドイッチ（ハムチーズ・ツナマヨ・エッグ・フルーツ）から1品、またはペストリー（バターロール・クロワッサン・チョコクロ・トースト）から1品をお選びいただけます。</p></div></div>
-            </section>
-            <section>
-                <h3>ブランチセット</h3>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/sets/トースト&コーヒーセット.png" alt="トースト＆コーヒーセット"><div class="menu-info"><div class="menu-header"><span>トースト＆コーヒーセット</span><span>980円</span></div><p class="menu-desc">自家製ブレッドと本日のコーヒー、フレッシュサラダがついた朝にぴったりのセットです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/sets/ベーグルサンド＆紅茶セット.png" alt="ベーグルサンド＆紅茶セット"><div class="menu-info"><div class="menu-header"><span>ベーグルサンド＆紅茶セット</span><span>1,080円</span></div><p class="menu-desc">ツナとクリームチーズのベーグルサンドに、香り高いストレートティーを合わせました。</p></div></div>
-            </section>
-            <section>
-                <h3>ライトセット</h3>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/sets/フルーツヨーグルトセット.png" alt="フルーツヨーグルトセット"><div class="menu-info"><div class="menu-header"><span>フルーツヨーグルトセット</span><span>900円</span></div><p class="menu-desc">旬のフルーツとヨーグルト、ミニスイーツを添えた女性にも人気のヘルシーセットです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/sets/サンドイッチ＆ミニスープセット.png" alt="サンドイッチ＆ミニスープセット"><div class="menu-info"><div class="menu-header"><span>サンドイッチ＆ミニスープセット</span><span>980円</span></div><p class="menu-desc">お腹にちょうど良いサイズのサンドイッチと、あたたかいミニスープがついた定番セットです。</p></div></div>
-            </section>
-        </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 CAFE & BAR Twilight All Rights Reserved.</p>
-    </footer>
-
-    <script src="menu.js"></script>
-
-</body>
+        <!-- メインコンテンツ -->
+        <main class="content">
+            <h2 class="page-title">DAY MENU</h2>
+            <p class="page-subtitle">明るい陽光の中で楽しむ、こだわりのコーヒーと軽食</p>
+            <!-- 期間限定コーナー -->
+            <div class="limited-announcement">
+                <h3>期間限定コーナー</h3>
+                <p>期間限定メニューは <a href="event.html">EVENTS & SPACE</a> でご紹介中です。今だけのカクテル・フード・スイーツをチェックしてください。</p>
+            </div>
+            <!-- メニューカテゴリ切り替えタブ -->
+            <div class="menu-category-tabs" role="tablist" aria-label="Menu categories">
+                <button class="tab-btn active" data-category="drinks" role="tab" aria-selected="true" tabindex="0">🍵 ドリンク</button>
+                <button class="tab-btn" data-category="foods" role="tab" aria-selected="false" tabindex="-1">🍽️ フード</button>
+                <button class="tab-btn" data-category="sets" role="tab" aria-selected="false" tabindex="-1">🍱 セット</button>
+            </div>
+            <!-- ドリンクメニュー -->
+            <div class="menu-section active" data-category="drinks">
+                <section>
+                    <h3>コーヒー</h3>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/coffee/アメリカンコーヒー.jpg" alt="アメリカン"><div class="menu-info"><div class="menu-header"><span>アメリカン</span><span>500円</span></div><p class="menu-desc">すっきりと軽い口当たりで、苦味が少なくブラックでも飲みやすい一杯です。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/coffee/エスプレッソ.jpg" alt="エスプレッソ"><div class="menu-info"><div class="menu-header"><span>エスプレッソ</span><span>450円</span></div><p class="menu-desc">豆の旨味と深いコクをギュッと凝縮した、濃厚でビターな本格派です。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/coffee/カフェラテ.jpg" alt="カフェラテ"><div class="menu-info"><div class="menu-header"><span>カフェラテ</span><span>600円</span></div><p class="menu-desc">エスプレッソの豊かな香りと、たっぷりのミルクが織りなすまろやかな味わいです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/coffee/カプチーノ.jpg" alt="カプチーノ"><div class="menu-info"><div class="menu-header"><span>カプチーノ</span><span>600円</span></div><p class="menu-desc">きめ細やかなふわふわのミルクフォームと、コーヒーの苦味が絶妙に調和します。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/coffee/カフェオレ.jpg" alt="カフェオレ"><div class="menu-info"><div class="menu-header"><span>カフェオレ</span><span>580円</span></div><p class="menu-desc">ドリップコーヒーをベースにミルクを合わせた、どこかホッとする優しい味わいです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/coffee/アメリカーノ.jpg" alt="アメリカーノ"><div class="menu-info"><div class="menu-header"><span>アメリカーノ</span><span>500円</span></div><p class="menu-desc">エスプレッソをお湯で割ることで、芳醇な香りを残しつつすっきりとした後味に仕上げました。</p></div></div>
+                </section>
+                <section>
+                    <h3>紅茶</h3>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/ミルクティー.png" alt="ミルクティー"><div class="menu-info"><div class="menu-header"><span>ミルクティー</span><span>550円</span></div><p class="menu-desc">コクのある茶葉にミルクを加え、まろやかで深みのある味わいに仕立てました。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/ストレート(アールグレイ).png" alt="ストレート(アールグレイ)"><div class="menu-info"><div class="menu-header"><span>ストレート(アールグレイ)</span><span>550円</span></div><p class="menu-desc">ベルガモットの気品ある香りがふんわりと広がる、爽やかなストレートティーです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/レモンティー.png" alt="レモンティー"><div class="menu-info"><div class="menu-header"><span>レモンティー</span><span>550円</span></div><p class="menu-desc">フレッシュレモンの爽やかな酸味が、紅茶の香りを引き立てる定番の一杯です。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/ウーロン茶.png" alt="ウーロン茶"><div class="menu-info"><div class="menu-header"><span>ウーロン茶</span><span>450円</span></div><p class="menu-desc">すっきりとしたキレのある喉越しで、どんなお食事にもよく合います。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/緑茶.png" alt="緑茶"><div class="menu-info"><div class="menu-header"><span>緑茶</span><span>450円</span></div><p class="menu-desc">国産茶葉の豊かな香りと、お茶本来の程よい渋みが心地よい一杯です。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/チャイ.png" alt="チャイ"><div class="menu-info"><div class="menu-header"><span>チャイ</span><span>650円</span></div><p class="menu-desc">数種類のスパイスが複雑に香る、心も身体も温まる濃厚なミルクティーです。</p></div></div>
+                </section>
+                <section>
+                    <h3>ソフトドリンク</h3>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/メロンソーダ.png" alt="メロンソーダ"><div class="menu-info"><div class="menu-header"><span>メロンソーダ</span><span>480円</span></div><p class="menu-desc">鮮やかな緑色とシュワっと弾む炭酸が懐かしい、甘く爽やかなソーダです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/コーラ.png" alt="コーラ"><div class="menu-info"><div class="menu-header"><span>コーラ</span><span>480円</span></div><p class="menu-desc">ピリッとした刺激と爽快な甘みが広がる、お馴染みの炭酸飲料です。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/ジンジャーエール.png" alt="ジンジャーエール"><div class="menu-info"><div class="menu-header"><span>ジンジャーエール</span><span>480円</span></div><p class="menu-desc">生姜のピリッとした辛みが効いた、大人な味わいのキリッとした炭酸です。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/りんごジュース.png" alt="りんごジュース"><div class="menu-info"><div class="menu-header"><span>りんごジュース</span><span>480円</span></div><p class="menu-desc">りんご本来の自然な甘みと、フルーティーで優しい香りが楽しめます。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/オレンジジュース.png" alt="オレンジジュース"><div class="menu-info"><div class="menu-header"><span>オレンジジュース</span><span>480円</span></div><p class="menu-desc">ジューシーなオレンジの爽やかな酸味とすっきりした甘みが広がります。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/カルピス.png" alt="カルピス"><div class="menu-info"><div class="menu-header"><span>カルピス</span><span>480円</span></div><p class="menu-desc">甘酸っぱくてまろやかな味わいが、子供から大人まで愛される定番のドリンクです。</p></div></div>
+                </section>
+            </div>
+            <!-- フードメニュー -->
+            <div class="menu-section" data-category="foods">
+                <section>
+                    <h3>サンドウィッチ</h3>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/ハムチーズサンド.png" alt="ハムチーズサンド"><div class="menu-info"><div class="menu-header"><span>ハムチーズサンド</span><span>720円</span></div><p class="menu-desc">香ばしく焼いたパンに、ハムとチーズのハーモニーをシンプルに詰めました。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/ツナマヨサンド.png" alt="ツナマヨサンド"><div class="menu-info"><div class="menu-header"><span>ツナマヨサンド</span><span>700円</span></div><p class="menu-desc">新鮮なツナとマヨネーズの爽やかな組み合わせが絶品です。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/エッグサンド.png" alt="エッグサンド"><div class="menu-info"><div class="menu-header"><span>エッグサンド</span><span>680円</span></div><p class="menu-desc">ふんわりとしたスクランブルエッグをたっぷり詰めた、朝食の定番です。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/フルーツサンド.png" alt="フルーツサンド"><div class="menu-info"><div class="menu-header"><span>フルーツサンド</span><span>750円</span></div><p class="menu-desc">鮮やかなフルーツをたっぷり乗せた、やさしい甘さが魅力のサンドです。</p></div></div>
+                </section>
+                <section>
+                    <h3>ペストリー</h3>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/バターロール.png" alt="バターロール"><div class="menu-info"><div class="menu-header"><span>バターロール</span><span>450円</span></div><p class="menu-desc">塩分が心地よい、バターの香りが引き立つクラシックなロールです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/クロワッサン.png" alt="クロワッサン"><div class="menu-info"><div class="menu-header"><span>クロワッサン</span><span>500円</span></div><p class="menu-desc">サクサクとした層状の食感と、バターの豊かな香りが特徴です。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/チョコクロワッサン.png" alt="チョコクロワッサン"><div class="menu-info"><div class="menu-header"><span>チョコクロワッサン</span><span>550円</span></div><p class="menu-desc">濃厚なチョコレートの甘みと、クロワッサンのサクサク食感が相性抜群です。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/トースト.png" alt="トースト"><div class="menu-info"><div class="menu-header"><span>トースト</span><span>450円</span></div><p class="menu-desc">香ばしく焼き上げたトーストは、シンプルに楽しみたい朝にぴったりです。</p></div></div>
+                </section>
+                <section>
+                    <h3>スイーツ</h3>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/チーズケーキ.png" alt="チーズケーキ"><div class="menu-info"><div class="menu-header"><span>チーズケーキ</span><span>650円</span></div><p class="menu-desc">濃厚でなめらかなチーズの風味が、優雅な甘さで仕上がっています。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/ガトーショコラ.png" alt="ガトーショコラ"><div class="menu-info"><div class="menu-header"><span>ガトーショコラ</span><span>700円</span></div><p class="menu-desc">深い味わいのダークチョコレートを使った、濃厚で艶やかなケーキです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/アップルパイ.png" alt="アップルパイ"><div class="menu-info"><div class="menu-header"><span>アップルパイ</span><span>680円</span></div><p class="menu-desc">シナモンの香りが心地よい、季節の王道スイーツです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/モンブラン.png" alt="モンブラン"><div class="menu-info"><div class="menu-header"><span>モンブラン</span><span>650円</span></div><p class="menu-desc">栗の豊かな風味が口いっぱいに広がる、上品で贅沢な大人のデザートです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/パフェ.png" alt="パフェ"><div class="menu-info"><div class="menu-header"><span>パフェ（旬の物）</span><span>850円</span></div><p class="menu-desc">その時期一番美味しい季節の素材をふんだんに盛り込んだ、見た目も華やかなパフェです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/フルーツタルト.png" alt="フルーツタルト"><div class="menu-info"><div class="menu-header"><span>フルーツタルト</span><span>650円</span></div><p class="menu-desc">サクサクのタルト生地の上に、瑞々しいフルーツを贅沢にトッピングしました。</p></div></div>
+                </section>
+                <section>
+                    <h3>昼夜兼用メニュー</h3>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/カレーライス.png" alt="カレーライス"><div class="menu-info"><div class="menu-header"><span>カレーライス</span><span>980円</span></div><p class="menu-desc">スパイスの香りとコク深いルウが後を引く、何度でも食べたくなる王道の味です。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/エッグハンバーグ.png" alt="エッグハンバーグ"><div class="menu-info"><div class="menu-header"><span>エッグハンバーグ</span><span>1,100円</span></div><p class="menu-desc">肉汁あふれるハンバーグに目玉焼きを乗せた、大人もワクワクする人気メニューです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/ハヤシライス.png" alt="ハヤシライス"><div class="menu-info"><div class="menu-header"><span>ハヤシライス</span><span>980円</span></div><p class="menu-desc">玉ねぎの甘みと赤ワインのコクが溶け込んだ、まろやかで優しい味わいです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/オムライス（ケチャップ）.png" alt="オムライス"><div class="menu-info"><div class="menu-header"><span>オムライス</span><span>1,000円</span></div><p class="menu-desc">とろとろの卵で包み込んだ、特製ソースが絶品の美しいオムライスです。</p></div></div>
+                </section>
+                <section>
+                    <h3>ランチ</h3>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/ナポリタン.png" alt="ナポリタン"><div class="menu-info"><div class="menu-header"><span>ナポリタン</span><span>880円</span></div><p class="menu-desc">どこか懐かしさを感じる、もっちり麺と特製ソースの定番ランチパスタです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/ホットドッグ.png" alt="ホットドッグ"><div class="menu-info"><div class="menu-header"><span>ホットドッグ</span><span>780円</span></div><p class="menu-desc">パリッとジューシーなソーセージを挟んだ、ランチに手軽に楽しめる一品です。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/チキンステーキ.png" alt="チキンステーキ"><div class="menu-info"><div class="menu-header"><span>チキンステーキ</span><span>980円</span></div><p class="menu-desc">皮目はパリッと、中はジューシーに焼き上げたボリューム満点のチキンです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/シーフードドリア.png" alt="シーフードドリア"><div class="menu-info"><div class="menu-header"><span>シーフードドリア</span><span>950円</span></div><p class="menu-desc">魚介の旨味がホワイトソースとチーズにギュッと詰まった熱々メニューです。</p></div></div>
+                </section>
+            </div>
+            <!-- セットメニュー -->
+            <div class="menu-section" data-category="sets">
+                <section>
+                    <h3>morningセット</h3>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/sets/メイン＋ドリンク（昼）.png" alt="メイン＋ドリンク"><div class="menu-info"><div class="menu-header"><span>メイン＋ドリンク</span><span>900円</span></div><p class="menu-desc">朝限定のモーニングセット。お好きなメインと、コーヒー・紅茶・ソフトドリンクから1杯をお選びいただけます。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/sets/メイン＋スイーツ＋ドリンク（昼）.png" alt="メイン＋スイーツ＋ドリンク"><div class="menu-info"><div class="menu-header"><span>メイン＋スイーツ＋ドリンク</span><span>1,200円</span></div><p class="menu-desc">メインに加えて、スイーツとドリンクを組み合わせた、ゆったり朝の贅沢セットです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/sets/メインの選択肢.png" alt="メインの選択肢"><div class="menu-info"><div class="menu-header"><span>メインの選択肢</span><span>選べます</span></div><p class="menu-desc">エッグベネディクト、フレンチトースト、パンケーキ、サンドイッチ（ハムチーズ・ツナマヨ・エッグ・フルーツ）から1品、またはペストリー（バターロール・クロワッサン・チョコクロ・トースト）から1品をお選びいただけます。</p></div></div>
+                </section>
+                <section>
+                    <h3>ブランチセット</h3>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/sets/トースト&コーヒーセット.png" alt="トースト＆コーヒーセット"><div class="menu-info"><div class="menu-header"><span>トースト＆コーヒーセット</span><span>980円</span></div><p class="menu-desc">自家製ブレッドと本日のコーヒー、フレッシュサラダがついた朝にぴったりのセットです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/sets/ベーグルサンド＆紅茶セット.png" alt="ベーグルサンド＆紅茶セット"><div class="menu-info"><div class="menu-header"><span>ベーグルサンド＆紅茶セット</span><span>1,080円</span></div><p class="menu-desc">ツナとクリームチーズのベーグルサンドに、香り高いストレートティーを合わせました。</p></div></div>
+                </section>
+                <section>
+                    <h3>ライトセット</h3>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/sets/フルーツヨーグルトセット.png" alt="フルーツヨーグルトセット"><div class="menu-info"><div class="menu-header"><span>フルーツヨーグルトセット</span><span>900円</span></div><p class="menu-desc">旬のフルーツとヨーグルト、ミニスイーツを添えた女性にも人気のヘルシーセットです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/sets/サンドイッチ＆ミニスープセット.png" alt="サンドイッチ＆ミニスープセット"><div class="menu-info"><div class="menu-header"><span>サンドイッチ＆ミニスープセット</span><span>980円</span></div><p class="menu-desc">お腹にちょうど良いサイズのサンドイッチと、あたたかいミニスープがついた定番セットです。</p></div></div>
+                </section>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2026 CAFE & BAR Twilight All Rights Reserved.</p>
+        </footer>
+        <script src="menu.js">
+        </script>
+    </body>
 </html>

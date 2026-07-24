@@ -1,213 +1,189 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BAR MENU - CAFE & BAR Twilight</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="night-style">
-
-    <!-- ヘッダー（全ページ共通） -->
-    <header>
-        <div class="logo">
-            <a href="index.html">CAFE & BAR Twilight</a>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BAR MENU - CAFE & BAR Twilight</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="night-style">
+        <!-- ヘッダー（全ページ共通） -->
+        <header>
+            <div class="logo">
+                <a href="index.html">CAFE & BAR Twilight</a>
+            </div>
+            <input type="checkbox" id="menu-toggle-checkbox" class="menu-checkbox" aria-controls="main-navigation" tabindex="-1" aria-hidden="true">
+            <button type="button" class="menu-toggle" aria-controls="main-navigation" aria-label="メニューを開く" aria-expanded="false">
+                <span>
+                </span>
+                <span>
+                </span>
+                <span>
+                </span>
+            </button>
+            <nav id="main-navigation" aria-label="Main navigation">
+                <ul>
+                    <li>
+                        <a href="index.html">HOME</a>
+                    </li>
+                    <li>
+                        <a href="concept.html">CONCEPT</a>
+                    </li>
+                    <li>
+                        <a href="menu-day.html">MENU</a>
+                    </li>
+                    <li>
+                        <a href="event.html">EVENTS & SPACE</a>
+                    </li>
+                    <li>
+                        <a href="access.html">ACCESS</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- 昼と夜を切り替えるボタン -->
+        <div class="menu-tab">
+            <a href="menu-day.html">☀️ 昼（カフェタイム）</a>
+            <a href="menu-night.html" class="active-tab">🌙 夜（バータイム）</a>
         </div>
-        <input type="checkbox" id="menu-toggle-checkbox" class="menu-checkbox" aria-controls="main-navigation" tabindex="-1" aria-hidden="true">
-        <button type="button" class="menu-toggle" aria-controls="main-navigation" aria-label="メニューを開く" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav id="main-navigation" aria-label="Main navigation">
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="concept.html">CONCEPT</a></li>
-                <li><a href="menu-day.html">MENU</a></li>
-                <li><a href="event.html">EVENTS & SPACE</a></li>
-                <li><a href="access.html">ACCESS</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- 昼と夜を切り替えるボタン -->
-    <div class="menu-tab">
-        <a href="menu-day.html">☀️ 昼（カフェタイム）</a>
-        <a href="menu-night.html" class="active-tab">🌙 夜（バータイム）</a>
-    </div>
-
-    <!-- メインコンテンツ -->
-    <main class="content">
-        <h2 class="page-title">NIGHT MENU</h2>
-        <p class="page-subtitle">音楽と灯りに包まれて、大人の時間を愉しむお酒の数々</p>
-
-        <!-- 注意書き -->
-        <div class="menu-notes" style="font-size: 0.9rem; color: #aaa; margin-bottom: 20px; text-align: center;">
-            <p>※ 画像はイメージです。</p>
-            <p>※ お酒（酒類）のご提供は、平日は夜のバータイム（18:00〜）からとなりますが、<strong>土日祝日は昼夜問わず</strong>ご注文いただけます。</p>
-            <p>※ ソフトドリンクなどのドリンクメニューは、毎日昼・夜どちらの時間帯でもご注文可能です。</p>
-        </div>
-
-        <!-- 期間限定コーナー -->
-        <div class="limited-announcement">
-            <h3>期間限定コーナー</h3>
-            <p>期間限定メニューは <a href="event.html">EVENTS & SPACE</a> でご案内中です。限定カクテル・フード・スイーツをぜひお試しください。</p>
-        </div>
-
-        <!-- メニューカテゴリ切り替えタブ -->
-        <div class="menu-category-tabs" role="tablist" aria-label="Menu categories">
-            <button class="tab-btn active" data-category="drinks" role="tab" aria-selected="true" tabindex="0">🍸 ドリンク</button>
-            <button class="tab-btn" data-category="foods" role="tab" aria-selected="false" tabindex="-1">🍽️ フード</button>
-            <button class="tab-btn" data-category="sets" role="tab" aria-selected="false" tabindex="-1">🍱 セット</button>
-        </div>
-
-        <!-- ドリンクメニュー -->
-        <div class="menu-section active" data-category="drinks">
-            <section>
-                <h3>サワー</h3>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/レモンサワー.png" alt="レモンサワー"><div class="menu-info"><div class="menu-header"><span>レモンサワー</span><span>550円</span></div><p class="menu-desc">レモンの爽快な酸味と炭酸のキレが抜群の、乾杯にぴったりの定番サワーです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/カルピスサワー.png" alt="カルピスサワー"><div class="menu-info"><div class="menu-header"><span>カルピスサワー</span><span>550円</span></div><p class="menu-desc">カルピスのまろやかな甘酸っぱさがアルコールと絶妙にマッチした飲みやすい一杯です。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/緑茶サワー.png" alt="緑茶サワー"><div class="menu-info"><div class="menu-header"><span>緑茶サワー</span><span>550円</span></div><p class="menu-desc">緑茶のすっきりした渋みが心地よく、お食事の味を引き立てるヘルシーなサワーです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/りんごサワー.png" alt="りんごサワー"><div class="menu-info"><div class="menu-header"><span>りんごサワー</span><span>580円</span></div><p class="menu-desc">りんごの優しい甘みとフルーティーな香りが口いっぱいに広がる優しい味わいです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/ゆずサワー.png" alt="ゆずサワー"><div class="menu-info"><div class="menu-header"><span>ゆずサワー</span><span>580円</span></div><p class="menu-desc">柚子の華やかな香りと上品な酸味が楽しめる、爽やかな和風サワーです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/オレンジサワー.png" alt="オレンジサワー"><div class="menu-info"><div class="menu-header"><span>オレンジサワー</span><span>580円</span></div><p class="menu-desc">オレンジのジューシーな甘酸っぱさが楽しめる、カクテル感覚で楽しめるサワーです。</p></div></div>
-            </section>
-
-            <section>
-                <h3>ビール</h3>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/グラスビール.png" alt="グラスビール"><div class="menu-info"><div class="menu-header"><span>グラスビール</span><span>500円</span></div><p class="menu-desc">ちょっと一杯楽しみたい時や、軽めの乾杯にちょうど良いサイズのグラスです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/瓶ビール.png" alt="瓶ビール（中瓶）"><div class="menu-info"><div class="menu-header"><span>瓶ビール（中瓶）</span><span>750円</span></div><p class="menu-desc">キレのあるスーパードライの味わいを、落ち着いてじっくり味わいたい時に。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/ジョッキ.png" alt="ジョッキ"><div class="menu-info"><div class="menu-header"><span>ジョッキ</span><span>700円</span></div><p class="menu-desc">冷え冷えのジョッキで爽快な喉越しを存分に楽しめる、定番のスタイルです。</p></div></div>
-            </section>
-
-            <section>
-                <h3>カクテル</h3>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/カシスオレンジ.png" alt="カシスオレンジ"><div class="menu-info"><div class="menu-header"><span>カシスオレンジ</span><span>680円</span></div><p class="menu-desc">カシスの甘みとオレンジの酸味が絶妙にマッチした、王道の人気カクテルです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/ピーチウーロン.png" alt="ピーチウーロン"><div class="menu-info"><div class="menu-header"><span>ピーチウーロン</span><span>680円</span></div><p class="menu-desc">ピーチの優しい香りとウーロン茶のすっきり感が合わさった飲みやすいお酒です。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/カルアミルク.png" alt="カルアミルク"><div class="menu-info"><div class="menu-header"><span>カルアミルク</span><span>700円</span></div><p class="menu-desc">コーヒーリキュールの深いコクとミルクが合わさった、デザート感覚の一杯です。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/チャイナブルー.png" alt="チャイナブルー"><div class="menu-info"><div class="menu-header"><span>チャイナブルー</span><span>700円</span></div><p class="menu-desc">ライチの華やかな香りとグレープフルーツの爽やかさが広がる美しいブルーのカクテル。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/マリブコーク.png" alt="マリブコーク"><div class="menu-info"><div class="menu-header"><span>マリブコーク</span><span>680円</span></div><p class="menu-desc">ココナッツの甘い香りとコーラの刺激がマッチした、トロピカルな味わいです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/ファジーネーブル.png" alt="ファジーネーブル"><div class="menu-info"><div class="menu-header"><span>ファジーネーブル</span><span>680円</span></div><p class="menu-desc">ピーチツリーとオレンジジュースのフルーティーで優しい甘みが楽しめます。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/カンパリオレンジ.png" alt="カンパリオレンジ"><div class="menu-info"><div class="menu-header"><span>カンパリオレンジ</span><span>680円</span></div><p class="menu-desc">カンパリの心地よい苦味とオレンジの甘みが大人の雰囲気を演出します。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/アマレットジンジャー.png" alt="アマレットジンジャー"><div class="menu-info"><div class="menu-header"><span>アマレットジンジャー</span><span>700円</span></div><p class="menu-desc">杏のような香ばしい甘み（アマレット）をジンジャーエールでキリッと引き締めた一杯。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/モスコミュール.png" alt="モスコミュール"><div class="menu-info"><div class="menu-header"><span>モスコミュール</span><span>750円</span></div><p class="menu-desc">ウォッカベースにライムと生姜の効いたジンジャーエールを加えた爽快な口当たり。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/ジントニック.png" alt="ジントニック"><div class="menu-info"><div class="menu-header"><span>ジントニック</span><span>750円</span></div><p class="menu-desc">ボタニカルなジンの香りとトニックウォーターの苦味が爽やかに香るバーの定番。</p></div></div>
-            </section>
-
-            <section>
-                <h3>焼酎</h3>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/白岳.png" alt="白岳（米）"><div class="menu-info"><div class="menu-header"><span>白岳（米）</span><span>600円</span></div><p class="menu-desc">まろやかな口当たりとすっきりとした透明感のある味わいが特徴の米焼酎です。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/黒霧島.png" alt="黒霧島（芋）"><div class="menu-info"><div class="menu-header"><span>黒霧島（芋）</span><span>600円</span></div><p class="menu-desc">トロッとした甘みとキリッとした後切れの良さが魅力の本格芋焼酎です。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/中々.png" alt="中々（麦）"><div class="menu-info"><div class="menu-header"><span>中々（麦）</span><span>650円</span></div><p class="menu-desc">麦本来の香ばしさと上品で軽やかな味わいが楽しめる人気の麦焼酎です。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/富乃宝山.png" alt="富乃宝山（芋）"><div class="menu-info"><div class="menu-header"><span>富乃宝山（芋）</span><span>750円</span></div><p class="menu-desc">柑橘系の爽やかな香りと、上品で豊かなコクが広がるプレミアムな芋焼酎。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/いいちこ.png" alt="いいちこ（麦）"><div class="menu-info"><div class="menu-header"><span>いいちこ（麦）</span><span>580円</span></div><p class="menu-desc">厳選された麦から生まれた、クセがなくお湯割りや水割りにもぴったりの定番焼酎。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/鍛高譚.png" alt="鍛高譚（しそ）"><div class="menu-info"><div class="menu-header"><span>鍛高譚（しそ）</span><span>600円</span></div><p class="menu-desc">北海道白糠町の厳選された赤しそ香る、爽やかで口当たりの良い爽やかなお酒です。</p></div></div>
-            </section>
-
-            <section>
-                <h3>ハイボール</h3>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/ウイスキー（ロック / 水割り）.png" alt="ウイスキー（ロック / 水割り）"><div class="menu-info"><div class="menu-header"><span>ウイスキー（ロック / 水割り）</span><span>600円</span></div><p class="menu-desc">ウイスキー本来の芳醇な香りと奥行きのある味わいをストレートに堪能できます。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/ハイボール.png" alt="ハイボール"><div class="menu-info"><div class="menu-header"><span>ハイボール</span><span>550円</span></div><p class="menu-desc">シュワっと弾む炭酸がウイスキーの香りを引き立てる、バーの必須ドリンク。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/コークハイ.png" alt="コークハイ"><div class="menu-info"><div class="menu-header"><span>コークハイ</span><span>600円</span></div><p class="menu-desc">ウイスキーのコクとコーラの甘みがマッチした、飲みやすさ抜群のハイボール。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/カルピスハイ.png" alt="カルピスハイ"><div class="menu-info"><div class="menu-header"><span>カルピスハイ</span><span>600円</span></div><p class="menu-desc">カルピスの甘酸っぱさがベースのお酒をまろやかに包み込む爽やかな一杯です。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/リョクハイ.png" alt="リョクハイ（緑茶ハイ）"><div class="menu-info"><div class="menu-header"><span>リョクハイ（緑茶ハイ）</span><span>580円</span></div><p class="menu-desc">お茶の爽やかな苦味ですっきりと仕上げた、お酒が進む定番メニューです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/ウーロンハイ.png" alt="ウーロンハイ"><div class="menu-info"><div class="menu-header"><span>ウーロンハイ</span><span>580円</span></div><p class="menu-desc">香ばしいウーロン茶の風味で、どんなお料理とも相性抜群の落ち着いた一杯。</p></div></div>
-            </section>
-
-            <section>
-                <h3>ワイン</h3>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/グラスワイン（赤）.png" alt="グラスワイン（赤）"><div class="menu-info"><div class="menu-header"><span>グラスワイン（赤）</span><span>650円</span></div><p class="menu-desc">重厚感のある果実味と心地よいタンニンが感じられる、落ち着いた赤ワインです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/グラスワイン（白）.png" alt="グラスワイン（白）"><div class="menu-info"><div class="menu-header"><span>グラスワイン（白）</span><span>650円</span></div><p class="menu-desc">すっきりとした酸味とフルーティーな香りが広がる、爽やかな白ワインです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/グラスワイン（ロゼ）.png" alt="グラスワイン（ロゼ）"><div class="menu-info"><div class="menu-header"><span>グラスワイン（ロゼ）</span><span>680円</span></div><p class="menu-desc">華やかな香りと優しい口当たりが魅力の、上品で美しいロゼワインです。</p></div></div>
-            </section>
-        </div>
-
-        <!-- フードメニュー -->
-        <div class="menu-section" data-category="foods">
-            <section>
-                <h3>前菜 / オードブル</h3>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/ナッツ盛り合わせ.png" alt="ナッツ盛り合わせ"><div class="menu-info"><div class="menu-header"><span>ナッツ盛り合わせ</span><span>580円</span></div><p class="menu-desc">塩気が効いた厳選ナッツの盛り合わせ。お酒のお供に最適です。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/チーズ盛り合わせ.png" alt="チーズ盛り合わせ"><div class="menu-info"><div class="menu-header"><span>チーズ盛り合わせ</span><span>780円</span></div><p class="menu-desc">4種類の個性的なチーズを盛り合わせた、ワインに合う一品です。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/生ハム盛り合わせ.png" alt="生ハム盛り合わせ"><div class="menu-info"><div class="menu-header"><span>生ハム盛り合わせ</span><span>950円</span></div><p class="menu-desc">イタリアンプロシュートをたっぷり。上品な香りが口に広がります。</p></div></div>
-            </section>
-
-            <section>
-                <h3>昼夜兼用メニュー</h3>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/カレーライス.png" alt="カレーライス"><div class="menu-info"><div class="menu-header"><span>カレーライス</span><span>980円</span></div><p class="menu-desc">スパイスの香りとコク深いルウが後を引く、何度でも食べたくなる王道の味です。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/エッグハンバーグ.png" alt="エッグハンバーグ"><div class="menu-info"><div class="menu-header"><span>エッグハンバーグ</span><span>1,100円</span></div><p class="menu-desc">肉汁あふれるハンバーグに目玉焼きを乗せた、大人もワクワクする人気メニューです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/ハヤシライス.png" alt="ハヤシライス"><div class="menu-info"><div class="menu-header"><span>ハヤシライス</span><span>980円</span></div><p class="menu-desc">玉ねぎの甘みと赤ワインのコクが溶け込んだ、まろやかで優しい味わいです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/オムライス（ケチャップ）.png" alt="オムライス"><div class="menu-info"><div class="menu-header"><span>オムライス</span><span>1,000円</span></div><p class="menu-desc">とろとろの卵で包み込んだ、特製ソースが絶品の美しいオムライスです。</p></div></div>
-            </section>
-
-            <section>
-                <h3>夜限定メニュー</h3>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/牛すじのビーフシチュー.png" alt="牛すじ肉のビーフシチュー"><div class="menu-info"><div class="menu-header"><span>牛すじ肉のビーフシチュー</span><span>1,200円</span></div><p class="menu-desc">じっくり時間をかけて煮込んだ、お肉がとろける濃厚で深い味わいの本格シチューです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/カツレツ.png" alt="ウィーン風カツレツ"><div class="menu-info"><div class="menu-header"><span>ウィーン風カツレツ</span><span>1,100円</span></div><p class="menu-desc">サクサクの衣とジューシーなお肉の旨味がワインやビールと相性抜群です。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/サーロインステーキ.png" alt="サーロインステーキ"><div class="menu-info"><div class="menu-header"><span>サーロインステーキ</span><span>1,500円</span></div><p class="menu-desc">ジューシーな肉汁と香ばしい香りが広がる、夜の主役にふさわしい贅沢プレートです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/マルゲリータ.png" alt="マルゲリータピザ"><div class="menu-info"><div class="menu-header"><span>マルゲリータピザ</span><span>950円</span></div><p class="menu-desc">トマトの酸味ととろけるチーズ、バジルの香りが引き立つ焼き立てピザです。</p></div></div>
-            </section>
-
-            <section>
-                <h3>おつまみ</h3>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/ポテト.png" alt="ポテト"><div class="menu-info"><div class="menu-header"><span>ポテト</span><span>500円</span></div><p class="menu-desc">サクサク揚げたて、手が止まらない定番のフライドポテトです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/からあげ.png" alt="唐揚げ"><div class="menu-info"><div class="menu-header"><span>唐揚げ</span><span>650円</span></div><p class="menu-desc">外はカリッ、中はジューシー！ビールが進む熱々の自慢の唐揚げです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/オニオンリング.png" alt="オニオンリング"><div class="menu-info"><div class="menu-header"><span>オニオンリング</span><span>550円</span></div><p class="menu-desc">甘みのあるタマネギをサクサクの衣で包んだ、軽い食感のおつまみです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/枝豆.png" alt="枝豆"><div class="menu-info"><div class="menu-header"><span>枝豆</span><span>400円</span></div><p class="menu-desc">まずはこれ！お酒の合間にほっと一息つける定番の味です。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/だし巻き卵.png" alt="だし巻き卵"><div class="menu-info"><div class="menu-header"><span>だし巻き卵</span><span>600円</span></div><p class="menu-desc">お出汁がじゅわっと溢れ出す、ふんわり優しい職人風の味わいです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/たこから.png" alt="たこ唐揚げ"><div class="menu-info"><div class="menu-header"><span>たこ唐揚げ</span><span>650円</span></div><p class="menu-desc">旨味がギュッと詰まったタコをカリッと香ばしく揚げた、お酒泥棒な一品です。</p></div></div>
-            </section>
-
-            <section>
-                <h3>バーナック（軽食）</h3>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/スパニッシュオムレツ.png" alt="スパニッシュオムレツ"><div class="menu-info"><div class="menu-header"><span>スパニッシュオムレツ</span><span>880円</span></div><p class="menu-desc">じゃがいもとオニオンが入った、ボリュームのあるオムレツです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/ベーコンと卵のリゾット.png" alt="ベーコンと卵のリゾット"><div class="menu-info"><div class="menu-header"><span>ベーコンと卵のリゾット</span><span>850円</span></div><p class="menu-desc">クリーミーなリゾットにベーコンの香ばしさが絶妙です。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/牛肉とマッシュルームのソテー.png" alt="牛肉とマッシュルームのソテー"><div class="menu-info"><div class="menu-header"><span>牛肉とマッシュルームのソテー</span><span>1200円</span></div><p class="menu-desc">赤ワインのソースで仕上げた、大人の味わいの一品。</p></div></div>
-            </section>
-        </div>
-
-        <!-- セットメニュー -->
-        <div class="menu-section" data-category="sets">
-            <section>
-                <h3>お好みセット</h3>
-                <div class="menu-box">
-                <img loading="lazy" decoding="async" src="image/foodImages/sets/おつまみ＆ドリンクセット.png" alt="おつまみ＆ドリンクセット">
-                <div class="menu-info">
-                        <div class="menu-header"><span>おつまみ ＆ ドリンクセット</span><span>900円</span></div>
-                        <p class="menu-desc">お好きなおつまみ1品に、ビールやサワーなどのドリンクが選べる、夜の気軽なちょい飲みセット。</p>
-                    </div>
-                </div>
-                <div class="menu-box">
-                    <img loading="lazy" decoding="async" src="image/foodImages/sets/メイン＆ドリンクセット.png" alt="メイン＆ドリンクセット">
-                    <div class="menu-info">
-                        <div class="menu-header"><span>メイン ＆ ドリンクセット</span><span>1,400円</span></div>
-                        <p class="menu-desc">ビーフシチューやカツレツなどの夜限定メインに、お好きなお酒やドリンクを合わせた満足セット。</p>
-                    </div>
-                </div>
-                <div class="menu-box">
-                    <img loading="lazy" decoding="async" src="image/foodImages/sets/軽食＆ドリンクセット.png" alt="軽食＆ドリンクセット">
-                    <div class="menu-info">
-                        <div class="menu-header"><span>軽食 ＆ ドリンクセット</span><span>1,200円</span></div>
-                        <p class="menu-desc">リゾットやソテーなどの軽食に、お好みのドリンクを組み合わせた大人の夜カフェセット。</p>
-                    </div>
-                </div>            </section>
-            <section>
-                <h3>バーリラックスセット</h3>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/ハイボール＆ナッツセット.png" alt="ハイボール＆ナッツセット"><div class="menu-info"><div class="menu-header"><span>ハイボール＆ナッツセット</span><span>980円</span></div><p class="menu-desc">定番のハイボールと香ばしいナッツ盛り合わせで、気軽に始められるおつまみセット。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/ワイン＆チーズセット.png" alt="ワイン＆チーズセット"><div class="menu-info"><div class="menu-header"><span>ワイン＆チーズセット</span><span>1,280円</span></div><p class="menu-desc">赤・白どちらかのグラスワインと、数種のチーズを楽しめるペアリングセットです。</p></div></div>
-            </section>
-            <section>
-                <h3>カップルセット</h3>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/カクテル2杯＆前菜盛りセット.png" alt="カクテル2杯＆前菜盛りセット"><div class="menu-info"><div class="menu-header"><span>カクテル2杯＆前菜盛りセット</span><span>2,200円</span></div><p class="menu-desc">カクテル2杯と前菜の盛り合わせで、二人の夜を華やかに彩るセットです。</p></div></div>
-                <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/スタンダードフードセット.png" alt="スタンダードフードセット"><div class="menu-info"><div class="menu-header"><span>スタンダードフードセット</span><span>1,580円</span></div><p class="menu-desc">唐揚げ・枝豆・ピクルスの3品とお好きなドリンク1杯がついたお得なセット。</p></div></div>
-            </section>
-        </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 CAFE & BAR Twilight All Rights Reserved.</p>
-    </footer>
-
-    <script src="menu.js"></script>
-
-</body>
+        <!-- メインコンテンツ -->
+        <main class="content">
+            <h2 class="page-title">NIGHT MENU</h2>
+            <p class="page-subtitle">音楽と灯りに包まれて、大人の時間を愉しむお酒の数々</p>
+            <!-- 注意書き -->
+            <div class="menu-notes" style="font-size: 0.9rem; color: #aaa; margin-bottom: 20px; text-align: center;">
+                <p>※ 画像はイメージです。</p>
+                <p>※ お酒（酒類）のご提供は、平日は夜のバータイム（18:00〜）からとなりますが、<strong>土日祝日は昼夜問わず</strong>ご注文いただけます。</p>
+                <p>※ ソフトドリンクなどのドリンクメニューは、毎日昼・夜どちらの時間帯でもご注文可能です。</p>
+            </div>
+            <!-- 期間限定コーナー -->
+            <div class="limited-announcement">
+                <h3>期間限定コーナー</h3>
+                <p>期間限定メニューは <a href="event.html">EVENTS & SPACE</a> でご案内中です。限定カクテル・フード・スイーツをぜひお試しください。</p>
+            </div>
+            <!-- メニューカテゴリ切り替えタブ -->
+            <div class="menu-category-tabs" role="tablist" aria-label="Menu categories">
+                <button class="tab-btn active" data-category="drinks" role="tab" aria-selected="true" tabindex="0">🍸 ドリンク</button>
+                <button class="tab-btn" data-category="foods" role="tab" aria-selected="false" tabindex="-1">🍽️ フード</button>
+                <button class="tab-btn" data-category="sets" role="tab" aria-selected="false" tabindex="-1">🍱 セット</button>
+            </div>
+            <!-- ドリンクメニュー -->
+            <div class="menu-section active" data-category="drinks">
+                <section>
+                    <h3>サワー</h3>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/レモンサワー.png" alt="レモンサワー"><div class="menu-info"><div class="menu-header"><span>レモンサワー</span><span>550円</span></div><p class="menu-desc">レモンの爽快な酸味と炭酸のキレが抜群の、乾杯にぴったりの定番サワーです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/カルピスサワー.png" alt="カルピスサワー"><div class="menu-info"><div class="menu-header"><span>カルピスサワー</span><span>550円</span></div><p class="menu-desc">カルピスのまろやかな甘酸っぱさがアルコールと絶妙にマッチした飲みやすい一杯です。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/緑茶サワー.png" alt="緑茶サワー"><div class="menu-info"><div class="menu-header"><span>緑茶サワー</span><span>550円</span></div><p class="menu-desc">緑茶のすっきりした渋みが心地よく、お食事の味を引き立てるヘルシーなサワーです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/りんごサワー.png" alt="りんごサワー"><div class="menu-info"><div class="menu-header"><span>りんごサワー</span><span>580円</span></div><p class="menu-desc">りんごの優しい甘みとフルーティーな香りが口いっぱいに広がる優しい味わいです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/ゆずサワー.png" alt="ゆずサワー"><div class="menu-info"><div class="menu-header"><span>ゆずサワー</span><span>580円</span></div><p class="menu-desc">柚子の華やかな香りと上品な酸味が楽しめる、爽やかな和風サワーです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/オレンジサワー.png" alt="オレンジサワー"><div class="menu-info"><div class="menu-header"><span>オレンジサワー</span><span>580円</span></div><p class="menu-desc">オレンジのジューシーな甘酸っぱさが楽しめる、カクテル感覚で楽しめるサワーです。</p></div></div>
+                </section>
+                <section>
+                    <h3>ビール</h3>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/グラスビール.png" alt="グラスビール"><div class="menu-info"><div class="menu-header"><span>グラスビール</span><span>500円</span></div><p class="menu-desc">ちょっと一杯楽しみたい時や、軽めの乾杯にちょうど良いサイズのグラスです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/瓶ビール（中瓶）.png" alt="瓶ビール（中瓶）"><div class="menu-info"><div class="menu-header"><span>瓶ビール（中瓶）</span><span>750円</span></div><p class="menu-desc">キレのあるスーパードライの味わいを、落ち着いてじっくり味わいたい時に。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/ジョッキ.png" alt="ジョッキ"><div class="menu-info"><div class="menu-header"><span>ジョッキ</span><span>700円</span></div><p class="menu-desc">冷え冷えのジョッキで爽快な喉越しを存分に楽しめる、定番のスタイルです。</p></div></div>
+                </section>
+                <section>
+                    <h3>カクテル</h3>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/カシスオレンジ.png" alt="カシスオレンジ"><div class="menu-info"><div class="menu-header"><span>カシスオレンジ</span><span>680円</span></div><p class="menu-desc">カシスの甘みとオレンジの酸味が絶妙にマッチした、王道の人気カクテルです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/ピーチウーロン.png" alt="ピーチウーロン"><div class="menu-info"><div class="menu-header"><span>ピーチウーロン</span><span>680円</span></div><p class="menu-desc">ピーチの優しい香りとウーロン茶のすっきり感が合わさった飲みやすいお酒です。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/カルアミルク.png" alt="カルアミルク"><div class="menu-info"><div class="menu-header"><span>カルアミルク</span><span>700円</span></div><p class="menu-desc">コーヒーリキュールの深いコクとミルクが合わさった、デザート感覚の一杯です。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/チャイナブルー.png" alt="チャイナブルー"><div class="menu-info"><div class="menu-header"><span>チャイナブルー</span><span>700円</span></div><p class="menu-desc">ライチの華やかな香りとグレープフルーツの爽やかさが広がる美しいブルーのカクテル。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/マリブコーク.png" alt="マリブコーク"><div class="menu-info"><div class="menu-header"><span>マリブコーク</span><span>680円</span></div><p class="menu-desc">ココナッツの甘い香りとコーラの刺激がマッチした、トロピカルな味わいです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/ファジーネーブル.png" alt="ファジーネーブル"><div class="menu-info"><div class="menu-header"><span>ファジーネーブル</span><span>680円</span></div><p class="menu-desc">ピーチツリーとオレンジジュースのフルーティーで優しい甘みが楽しめます。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/カンパリオレンジ.png" alt="カンパリオレンジ"><div class="menu-info"><div class="menu-header"><span>カンパリオレンジ</span><span>680円</span></div><p class="menu-desc">カンパリの心地よい苦味とオレンジの甘みが大人の雰囲気を演出します。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/アマレットジンジャー.png" alt="アマレットジンジャー"><div class="menu-info"><div class="menu-header"><span>アマレットジンジャー</span><span>700円</span></div><p class="menu-desc">杏のような香ばしい甘み（アマレット）をジンジャーエールでキリッと引き締めた一杯。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/モスコミュール.png" alt="モスコミュール"><div class="menu-info"><div class="menu-header"><span>モスコミュール</span><span>750円</span></div><p class="menu-desc">ウォッカベースにライムと生姜の効いたジンジャーエールを加えた爽快な口当たり。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/ジントニック.png" alt="ジントニック"><div class="menu-info"><div class="menu-header"><span>ジントニック</span><span>750円</span></div><p class="menu-desc">ボタニカルなジンの香りとトニックウォーターの苦味が爽やかに香るバーの定番。</p></div></div>
+                </section>
+                <section>
+                    <h3>焼酎</h3>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/白岳.png" alt="白岳（米）"><div class="menu-info"><div class="menu-header"><span>白岳（米）</span><span>600円</span></div><p class="menu-desc">まろやかな口当たりとすっきりとした透明感のある味わいが特徴の米焼酎です。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/黒霧島.png" alt="黒霧島（芋）"><div class="menu-info"><div class="menu-header"><span>黒霧島（芋）</span><span>600円</span></div><p class="menu-desc">トロッとした甘みとキリッとした後切れの良さが魅力の本格芋焼酎です。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/中々.png" alt="中々（麦）"><div class="menu-info"><div class="menu-header"><span>中々（麦）</span><span>650円</span></div><p class="menu-desc">麦本来の香ばしさと上品で軽やかな味わいが楽しめる人気の麦焼酎です。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/富乃宝山.png" alt="富乃宝山（芋）"><div class="menu-info"><div class="menu-header"><span>富乃宝山（芋）</span><span>750円</span></div><p class="menu-desc">柑橘系の爽やかな香りと、上品で豊かなコクが広がるプレミアムな芋焼酎。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/いいちこ.png" alt="いいちこ（麦）"><div class="menu-info"><div class="menu-header"><span>いいちこ（麦）</span><span>580円</span></div><p class="menu-desc">厳選された麦から生まれた、クセがなくお湯割りや水割りにもぴったりの定番焼酎。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/鍛高譚.png" alt="鍛高譚（しそ）"><div class="menu-info"><div class="menu-header"><span>鍛高譚（しそ）</span><span>600円</span></div><p class="menu-desc">北海道白糠町の厳選された赤しそ香る、爽やかで口当たりの良い爽やかなお酒です。</p></div></div>
+                </section>
+                <section>
+                    <h3>ハイボール</h3>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/ウイスキー（ロック / 水割り）.png" alt="ウイスキー（ロック / 水割り）"><div class="menu-info"><div class="menu-header"><span>ウイスキー（ロック / 水割り）</span><span>600円</span></div><p class="menu-desc">ウイスキー本来の芳醇な香りと奥行きのある味わいをストレートに堪能できます。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/ハイボール.png" alt="ハイボール"><div class="menu-info"><div class="menu-header"><span>ハイボール</span><span>550円</span></div><p class="menu-desc">シュワっと弾む炭酸がウイスキーの香りを引き立てる、バーの必須ドリンク。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/コークハイ.png" alt="コークハイ"><div class="menu-info"><div class="menu-header"><span>コークハイ</span><span>600円</span></div><p class="menu-desc">ウイスキーのコクとコーラの甘みがマッチした、飲みやすさ抜群のハイボール。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/カルピスハイ.png" alt="カルピスハイ"><div class="menu-info"><div class="menu-header"><span>カルピスハイ</span><span>600円</span></div><p class="menu-desc">カルピスの甘酸っぱさがベースのお酒をまろやかに包み込む爽やかな一杯です。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/リョクハイ.png" alt="リョクハイ（緑茶ハイ）"><div class="menu-info"><div class="menu-header"><span>リョクハイ（緑茶ハイ）</span><span>580円</span></div><p class="menu-desc">お茶の爽やかな苦味ですっきりと仕上げた、お酒が進む定番メニューです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/ウーロンハイ.png" alt="ウーロンハイ"><div class="menu-info"><div class="menu-header"><span>ウーロンハイ</span><span>580円</span></div><p class="menu-desc">香ばしいウーロン茶の風味で、どんなお料理とも相性抜群の落ち着いた一杯。</p></div></div>
+                </section>
+                <section>
+                    <h3>ワイン</h3>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/グラスワイン（赤）.png" alt="グラスワイン（赤）"><div class="menu-info"><div class="menu-header"><span>グラスワイン（赤）</span><span>650円</span></div><p class="menu-desc">重厚感のある果実味と心地よいタンニンが感じられる、落ち着いた赤ワインです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/グラスワイン（白）.png" alt="グラスワイン（白）"><div class="menu-info"><div class="menu-header"><span>グラスワイン（白）</span><span>650円</span></div><p class="menu-desc">すっきりとした酸味とフルーティーな香りが広がる、爽やかな白ワインです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/drinkImages/alcohol/グラスワイン（ロゼ）.png" alt="グラスワイン（ロゼ）"><div class="menu-info"><div class="menu-header"><span>グラスワイン（ロゼ）</span><span>680円</span></div><p class="menu-desc">華やかな香りと優しい口当たりが魅力の、上品で美しいロゼワインです。</p></div></div>
+                </section>
+            </div>
+            <!-- フードメニュー -->
+            <div class="menu-section" data-category="foods">
+                <section>
+                    <h3>前菜 / オードブル</h3>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/ナッツ盛り合わせ.png" alt="ナッツ盛り合わせ"><div class="menu-info"><div class="menu-header"><span>ナッツ盛り合わせ</span><span>580円</span></div><p class="menu-desc">塩気が効いた厳選ナッツの盛り合わせ。お酒のお供に最適です。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/チーズ盛り合わせ.png" alt="チーズ盛り合わせ"><div class="menu-info"><div class="menu-header"><span>チーズ盛り合わせ</span><span>780円</span></div><p class="menu-desc">4種類の個性的なチーズを盛り合わせた、ワインに合う一品です。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/生ハム盛り合わせ.png" alt="生ハム盛り合わせ"><div class="menu-info"><div class="menu-header"><span>生ハム盛り合わせ</span><span>950円</span></div><p class="menu-desc">イタリアンプロシュートをたっぷり。上品な香りが口に広がります。</p></div></div>
+                </section>
+                <section>
+                    <h3>昼夜兼用メニュー</h3>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/カレーライス.png" alt="カレーライス"><div class="menu-info"><div class="menu-header"><span>カレーライス</span><span>980円</span></div><p class="menu-desc">スパイスの香りとコク深いルウが後を引く、何度でも食べたくなる王道の味です。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/エッグハンバーグ.png" alt="エッグハンバーグ"><div class="menu-info"><div class="menu-header"><span>エッグハンバーグ</span><span>1,100円</span></div><p class="menu-desc">肉汁あふれるハンバーグに目玉焼きを乗せた、大人もワクワクする人気メニューです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/ハヤシライス.png" alt="ハヤシライス"><div class="menu-info"><div class="menu-header"><span>ハヤシライス</span><span>980円</span></div><p class="menu-desc">玉ねぎの甘みと赤ワインのコクが溶け込んだ、まろやかで優しい味わいです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/オムライス（ケチャップ）.png" alt="オムライス"><div class="menu-info"><div class="menu-header"><span>オムライス</span><span>1,000円</span></div><p class="menu-desc">とろとろの卵で包み込んだ、特製ソースが絶品の美しいオムライスです。</p></div></div>
+                </section>
+                <section>
+                    <h3>夜限定メニュー</h3>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/牛すじのビーフシチュー.png" alt="牛すじ肉のビーフシチュー"><div class="menu-info"><div class="menu-header"><span>牛すじ肉のビーフシチュー</span><span>1,200円</span></div><p class="menu-desc">じっくり時間をかけて煮込んだ、お肉がとろける濃厚で深い味わいの本格シチューです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/カツレツ.png" alt="ウィーン風カツレツ"><div class="menu-info"><div class="menu-header"><span>ウィーン風カツレツ</span><span>1,100円</span></div><p class="menu-desc">サクサクの衣とジューシーなお肉の旨味がワインやビールと相性抜群です。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/サーロインステーキ.png" alt="サーロインステーキ"><div class="menu-info"><div class="menu-header"><span>サーロインステーキ</span><span>1,500円</span></div><p class="menu-desc">ジューシーな肉汁と香ばしい香りが広がる、夜の主役にふさわしい贅沢プレートです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/マルゲリータ.png" alt="マルゲリータピザ"><div class="menu-info"><div class="menu-header"><span>マルゲリータピザ</span><span>950円</span></div><p class="menu-desc">トマトの酸味ととろけるチーズ、バジルの香りが引き立つ焼き立てピザです。</p></div></div>
+                </section>
+                <section>
+                    <h3>おつまみ</h3>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/ポテト.png" alt="ポテト"><div class="menu-info"><div class="menu-header"><span>ポテト</span><span>500円</span></div><p class="menu-desc">サクサク揚げたて、手が止まらない定番のフライドポテトです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/からあげ.png" alt="唐揚げ"><div class="menu-info"><div class="menu-header"><span>唐揚げ</span><span>650円</span></div><p class="menu-desc">外はカリッ、中はジューシー！ビールが進む熱々の自慢の唐揚げです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/オニオンリング.png" alt="オニオンリング"><div class="menu-info"><div class="menu-header"><span>オニオンリング</span><span>550円</span></div><p class="menu-desc">甘みのあるタマネギをサクサクの衣で包んだ、軽い食感のおつまみです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/枝豆.png" alt="枝豆"><div class="menu-info"><div class="menu-header"><span>枝豆</span><span>400円</span></div><p class="menu-desc">まずはこれ！お酒の合間にほっと一息つける定番の味です。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/だし巻き卵.png" alt="だし巻き卵"><div class="menu-info"><div class="menu-header"><span>だし巻き卵</span><span>600円</span></div><p class="menu-desc">お出汁がじゅわっと溢れ出す、ふんわり優しい職人風の味わいです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/たこから.png" alt="たこ唐揚げ"><div class="menu-info"><div class="menu-header"><span>たこ唐揚げ</span><span>650円</span></div><p class="menu-desc">旨味がギュッと詰まったタコをカリッと香ばしく揚げた、お酒泥棒な一品です。</p></div></div>
+                </section>
+                <section>
+                    <h3>バーナック（軽食）</h3>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/スパニッシュオムレツ.png" alt="スパニッシュオムレツ"><div class="menu-info"><div class="menu-header"><span>スパニッシュオムレツ</span><span>880円</span></div><p class="menu-desc">じゃがいもとオニオンが入った、ボリュームのあるオムレツです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/ベーコンと卵のリゾット.png" alt="ベーコンと卵のリゾット"><div class="menu-info"><div class="menu-header"><span>ベーコンと卵のリゾット</span><span>850円</span></div><p class="menu-desc">クリーミーなリゾットにベーコンの香ばしさが絶妙です。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/牛肉とマッシュルームのソテー.png" alt="牛肉とマッシュルームのソテー"><div class="menu-info"><div class="menu-header"><span>牛肉とマッシュルームのソテー</span><span>1200円</span></div><p class="menu-desc">赤ワインのソースで仕上げた、大人の味わいの一品。</p></div></div>
+                </section>
+            </div>
+            <!-- セットメニュー -->
+            <div class="menu-section" data-category="sets">
+                <section>
+                    <h3>お好みセット</h3>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/sets/おつまみ＆ドリンクセット.png" alt="おつまみ＆ドリンクセット"><div class="menu-info"><div class="menu-header"><span>おつまみ ＆ ドリンクセット</span><span>900円</span></div><p class="menu-desc">お好きなおつまみ1品に、ビールやサワーなどのドリンクが選べる、夜の気軽なちょい飲みセット。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/sets/メイン＆ドリンクセット.png" alt="メイン＆ドリンクセット"><div class="menu-info"><div class="menu-header"><span>メイン ＆ ドリンクセット</span><span>1,400円</span></div><p class="menu-desc">ビーフシチューやカツレツなどの夜限定メインに、お好きなお酒やドリンクを合わせた満足セット。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/sets/軽食＆ドリンクセット.png" alt="軽食＆ドリンクセット"><div class="menu-info"><div class="menu-header"><span>軽食 ＆ ドリンクセット</span><span>1,200円</span></div><p class="menu-desc">リゾットやソテーなどの軽食に、お好みのドリンクを組み合わせた大人の夜カフェセット。</p></div></div>
+                </section>
+                <section>
+                    <h3>バーリラックスセット</h3>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/ハイボール＆ナッツセット.png" alt="ハイボール＆ナッツセット"><div class="menu-info"><div class="menu-header"><span>ハイボール＆ナッツセット</span><span>980円</span></div><p class="menu-desc">定番のハイボールと香ばしいナッツ盛り合わせで、気軽に始められるおつまみセット。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/ワイン＆チーズセット.png" alt="ワイン＆チーズセット"><div class="menu-info"><div class="menu-header"><span>ワイン＆チーズセット</span><span>1,280円</span></div><p class="menu-desc">赤・白どちらかのグラスワインと、数種のチーズを楽しめるペアリングセットです。</p></div></div>
+                </section>
+                <section>
+                    <h3>カップルセット</h3>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/カクテル2杯＆前菜盛りセット.png" alt="カクテル2杯＆前菜盛りセット"><div class="menu-info"><div class="menu-header"><span>カクテル2杯＆前菜盛りセット</span><span>2,200円</span></div><p class="menu-desc">カクテル2杯と前菜の盛り合わせで、二人の夜を華やかに彩るセットです。</p></div></div>
+                    <div class="menu-box"><img loading="lazy" decoding="async" src="image/foodImages/スタンダードフードセット.png" alt="スタンダードフードセット"><div class="menu-info"><div class="menu-header"><span>スタンダードフードセット</span><span>1,580円</span></div><p class="menu-desc">唐揚げ・枝豆・ピクルスの3品とお好きなドリンク1杯がついたお得なセット。</p></div></div>
+                </section>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2026 CAFE & BAR Twilight All Rights Reserved.</p>
+        </footer>
+        <script src="menu.js">
+        </script>
+    </body>
 </html>
