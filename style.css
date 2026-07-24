@@ -12,6 +12,10 @@
     --border: rgba(197,160,89,0.25);
     --radius: 6px;
     --spacing: 20px;
+    --header-offset: 64px;
+    --header-height: 64px;
+    --menu-tab-height: 80px;
+    --menu-tab-offset: calc(var(--header-height) + var(--menu-tab-height));
 }
 
 /* --- 共通の基本設定 --- */
@@ -25,6 +29,9 @@ html {
 
 body {
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    padding-top: var(--header-height);
     font-family: sans-serif;
     line-height: 1.6;
     background-color: var(--bg);
@@ -70,6 +77,11 @@ footer {
 
 /* モバイルで展開するナビゲーションを、本文より常に前面に表示する */
 header {
+    height: var(--header-height);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
     z-index: 100;
 }
 
@@ -268,7 +280,7 @@ body.event-page::before {
     content: "";
     position: fixed;
     inset: 0;
-    background-image: url("image/nightImage.jpg");
+    background-image: url("image/nightImage.png");
     background-size: cover;
     background-position: center;
     opacity: 0.28;
@@ -289,6 +301,12 @@ body.night-style .menu-box {
     gap: 10px;
     padding: 20px;
     background-color: rgba(0,0,0,0.05);
+    position: fixed;
+    top: var(--header-offset);
+    right: 0;
+    left: 0;
+    min-height: var(--menu-tab-height);
+    z-index: 90;
 }
 
 .menu-tab a {
@@ -404,6 +422,20 @@ body.night-style .menu-box .menu-desc {
     justify-content: center;
     margin: 30px 0;
     flex-wrap: wrap;
+    position: sticky;
+    top: var(--menu-tab-offset);
+    z-index: 80;
+    padding: 12px 0;
+    background-color: var(--bg);
+}
+
+body.night-style .menu-category-tabs {
+    background-color: #1a1a1a;
+}
+
+body.day-style .content,
+body.night-style .content {
+    margin-top: 160px;
 }
 
 .menu-category-tabs button {
@@ -551,7 +583,7 @@ footer {
     color: #aaa;
     text-align: center;
     padding: 20px;
-    margin-top: 50px;
+    margin-top: auto;
     font-size: 0.9rem;
 }
 
@@ -563,17 +595,28 @@ footer {
     /* 1. 全体の余白や文字サイズをスマホ用に調整 */
     body {
         font-size: 14px;
-        padding: 0;
+        padding: var(--header-height) 0 0;
+        --header-height: 60px;
+        --header-offset: var(--header-height);
+        --menu-tab-height: 56px;
+        --menu-tab-offset: calc(var(--header-height) + var(--menu-tab-height));
     }
 
     /* 2. ヘッダーのメニューを縦並びまたはコンパクトにする */
     header {
-        flex-wrap: wrap;
-        padding: 10px 12px;
+        height: var(--header-height);
+        padding: 10px 72px 10px 12px;
         text-align: left;
-        position: relative;
-        width: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
         left: 0;
+        width: 100%;
+    }
+
+    header .logo {
+        font-size: 1rem;
+        line-height: 1.2;
     }
 
     .menu-toggle {
@@ -632,7 +675,7 @@ footer {
     }
 
     header nav {
-        width: 100%;
+        width: auto;
     }
 
     header nav ul {
@@ -680,9 +723,54 @@ footer {
     header nav ul li a {
         display: block;
         width: 100%;
-        padding: 12px 16px;
+        padding: 14px 16px;
         text-align: left;
         color: #fff;
+    }
+
+    .menu-tab {
+        position: fixed;
+        top: var(--header-offset);
+        right: 0;
+        left: 0;
+        min-height: var(--menu-tab-height);
+        gap: 8px;
+        padding: 8px 12px;
+        background-color: var(--bg);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+        z-index: 90;
+    }
+
+    body.night-style .menu-tab {
+        background-color: #1a1a1a;
+    }
+
+    .menu-tab a {
+        min-width: 0;
+        max-width: none;
+        flex: 1 1 0;
+        padding: 9px 8px;
+        font-size: 0.85rem;
+        text-align: center;
+    }
+
+    .menu-category-tabs {
+        position: fixed;
+        top: var(--menu-tab-offset);
+        right: 12px;
+        left: 12px;
+        gap: 6px;
+        margin: 0;
+        padding: 8px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+        z-index: 80;
+    }
+
+    .menu-category-tabs button {
+        min-width: 80px;
+        flex: 1 1 30%;
+        padding: 9px 8px;
+        font-size: 0.85rem;
     }
 
     .info-table,
@@ -718,6 +806,20 @@ footer {
         width: 100%;
         padding: 0 12px;
         margin: 20px auto;
+    }
+
+    body.day-style .content,
+    body.night-style .content {
+        margin-top: 120px;
+    }
+
+    .page-title {
+        margin-bottom: 16px;
+        font-size: 1.5rem;
+    }
+
+    .page-subtitle {
+        margin-bottom: 20px;
     }
 
     /* モバイルのヒーローはスマホ用画像を使い、左右余白をなくす */
