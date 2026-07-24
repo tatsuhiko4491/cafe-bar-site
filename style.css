@@ -29,12 +29,71 @@ body {
     line-height: 1.6;
     background-color: var(--bg);
     color: var(--text);
+    min-height: 100vh;
+}
+
+.concept-bg-layer {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.concept-bg-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+    filter: brightness(1.05) saturate(0.9);
+}
+
+.concept-bg-slide.active {
+    opacity: 1;
+}
+
+.concept-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.35);
+    pointer-events: none;
+}
+
+header,
+main.page-content,
+footer {
+    position: relative;
+    z-index: 1;
+}
+
+main.page-content {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
 img {
     max-width: 100%;
     height: auto;
     display: block;
+}
+
+.access-map {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.access-map img {
+    margin: 0 auto;
+    display: block;
+}
+
+.info-table {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 a:focus-visible,
@@ -200,6 +259,18 @@ body.night-style {
     color: #e0e0e0;
 }
 
+body.event-page::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("image/nightImage.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.28;
+    pointer-events: none;
+    z-index: -2;
+}
+
 body.night-style .menu-box {
     background-color: #2a2a2a;
     border-color: rgba(255, 255, 255, 0.12);
@@ -237,10 +308,36 @@ body.night-style .menu-box {
     border-color: #c5a059;
 }
 
-.content, .page-content {
+body.day-style .content,
+body.day-style .page-content {
     max-width: 800px;
     margin: 40px auto;
     padding: 0 20px;
+    color: #000;
+}
+
+body.day-style .page-content h2,
+body.day-style .page-content h3,
+body.day-style .page-content p,
+body.day-style .page-content .concept-lead {
+    color: #000;
+}
+
+body.night-style .content,
+body.night-style .page-content {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    color: #fff;
+}
+
+body.night-style .page-content h2,
+body.night-style .page-content h3,
+body.night-style .page-content p,
+body.night-style .page-content li,
+body.night-style .page-content .date,
+body.night-style .page-content .title {
+    color: #fff;
 }
 
 .menu-box {
@@ -581,6 +678,18 @@ footer {
         padding: 12px 16px;
         text-align: left;
         color: #fff;
+    }
+
+    .info-table,
+    .access-map {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .info-table dl,
+    .access-map img {
+        margin-left: auto;
+        margin-right: auto;
     }
 
     html, body {
